@@ -200,6 +200,7 @@ void TimerFunction(int value) {
 		Centery += 10;
 	}
 	Main.Move();
+	Main.Update();
 	glutPostRedisplay();
 	glutTimerFunc(100, TimerFunction, 1);
 }

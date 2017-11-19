@@ -15,9 +15,13 @@ protected:
 	GLUquadricObj *Equipment[6];
 	GLUquadricObj *Equipment_other[2];
 	
+
+	GLUquadricObj *Fire[5];
+
 	int speed;
 	float x_angle;
 	float z_angle;
+	float y_angle;
 	float xPos;
 	float yPos;
 
@@ -41,4 +45,5 @@ public:
 	void Getspecial(const int, const int,const int);
 	void GetKey(const unsigned char, const int, const int);
 	void Death();
+	void Update();
 };

@@ -4,10 +4,11 @@ void Character::Init() {
 	m_bMove = false;//이동가능 여부
 	speed = 10;
 	direction = 0;
-	x_angle = 0.0;
-	z_angle = 0.0;
-	xPos = 0.0;
-	yPos = 0.0;
+	x_angle = 0.0f;
+	z_angle = 0.0f;
+	xPos = 0.0f;
+	yPos = 0.0f;
+	y_angle = 0.0f;
 	hp = 100.0;
 	gage = 0.0;
 	Start_Z = 0.0;
@@ -32,7 +33,9 @@ void Character::Init() {
 		gluQuadricNormals(Equipment_other[i], GLU_SMOOTH);
 	}
 	for (int i = 0; i < 4; i++) {
-
+		Fire[i] = gluNewQuadric();
+		gluQuadricDrawStyle(Fire[i], GLU_FILL);
+		gluQuadricNormals(Fire[i], GLU_SMOOTH);
 
 
 
@@ -48,6 +51,10 @@ void Character::Init() {
 		gluQuadricDrawStyle(Wing_other_part[i], GLU_FILL);
 		gluQuadricNormals(Wing_other_part[i], GLU_SMOOTH);
 	}
+	Fire[4] = gluNewQuadric();
+	gluQuadricDrawStyle(Fire[4], GLU_FILL);
+	gluQuadricNormals(Fire[4], GLU_SMOOTH);
+
 	for (int i = 0; i < 6; i++) {
 		Equipment[i] = gluNewQuadric();
 		gluQuadricDrawStyle(Equipment[i], GLU_FILL);
@@ -75,9 +82,37 @@ void Character::Render() {
 	glPushMatrix();
 	glTranslatef(xPos, 10.0+yPos,Start_Z);
 	//glRotatef(180, 0, 1, 0);
+
 	//glMultMatrixf(m_mtxlocalt);
 	//glMultMatrixf(m_mtxlocal);
+	if (Dead) {
+		glColor3f(1, 0, 0);
+		glPushMatrix(); {
+			glRotatef(10, 0, 0, 1);
+			gluCylinder(Fire[0], 10,0,20,20,8);
+		}glPopMatrix();
+		glPushMatrix(); {
+			glRotatef(5, 0, 0, 1);
+			gluCylinder(Fire[1], 10, 0, 20, 20, 8);
+		}glPopMatrix();
+		glPushMatrix(); {
+			glRotatef(-5, 0, 0, 1);
+			gluCylinder(Fire[2], 10, 0, 20, 20, 8);
+		}glPopMatrix();
+		glPushMatrix(); {
+			glRotatef(-10, 0, 0, 1);
+			gluCylinder(Fire[3], 10, 0, 20, 20, 8);
+		}glPopMatrix();
+		glColor3f(1, 1, 0);
+		glPushMatrix(); {
+			glTranslatef( 0, -5, 0);
+			gluSphere(Fire[4], 20, 20, 20);
+		}glPopMatrix();
+	}
+
+
 	glRotatef(x_angle, 1, 0, 0);
+	glRotatef(y_angle, 0, 1, 0);
 	glRotatef(z_angle, 0, 0, 1);
 
 	glPushMatrix(); {//전체 
@@ -328,6 +363,16 @@ void Character::  Move() {
 
 		}
 		break;
+	default:
+		break;
+	}
+	switch (Dead) {
+	case true:
+		y_angle += 50.0f;
+		yPos -= 10;
+		break;
+	default:
+		break;
 	}
 	
 	
@@ -432,4 +477,18 @@ void Character::GetKey(const unsigned char key, const int x, const int y) {
 
 
 void Character::Death() {
+	if (hp < 0.0) {
+		Dead = true;
+		m_bMove = false;
+	}
+}
+void Character::Update() {
+	
+	if (hp < 0.0) {
+		hp = -1;
+	}
+	else {
+		hp-=1.0;
+	}
+	Death();
 }

@@ -31,6 +31,9 @@
     <Filter Include="SoundManager">
       <UniqueIdentifier>{92ff37f1-bce1-4877-bc9b-98f7d56ae51f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\CObstacle">
+      <UniqueIdentifier>{efabff0e-a431-403b-b4f4-eb99a4a3d255}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -76,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="CSoundManager.h">
       <Filter>SoundManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CObstacle.h">
+      <Filter>Source Files\CObstacle</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

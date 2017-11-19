@@ -32,6 +32,7 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="CIngame.h" />
     <ClInclude Include="CIntro.h" />
+    <ClInclude Include="CObstacle.h" />
     <ClInclude Include="CSoundManager.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="map.h" />
