@@ -1,25 +1,25 @@
 ﻿  Character.cpp
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(83): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(161): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(168): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(177): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(183): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(81): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(142): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(149): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(158): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(164): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(173): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(179): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(186): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
 c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(192): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(198): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(199): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
 c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(205): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(211): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(218): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(224): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(231): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(238): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(253): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(259): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(273): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(279): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(302): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(311): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(393): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(414): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(435): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(456): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(212): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(219): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(234): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(240): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(254): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(260): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(283): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(292): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(379): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(400): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(421): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\그래픽\character.cpp(442): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   그래픽.vcxproj -> C:\Users\lee\Documents\GitHub\cg\SecondComputerGrapics\Finalexam\Debug\그래픽.exe

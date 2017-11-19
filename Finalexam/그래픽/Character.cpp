@@ -13,6 +13,7 @@ void Character::Init() {
 	gage = 0.0;
 	Start_Z = 0.0;
 	Dead = false;
+	Boom_Radius = 20;
 	memset(m_mtxlocal,0, sizeof(m_mtxlocal));
 	m_mtxlocal[0] = m_mtxlocal[5] = m_mtxlocal[10] = m_mtxlocal[15] = 1;
 	memset(m_mtxlocalt, 0, sizeof(m_mtxlocalt));
@@ -33,10 +34,7 @@ void Character::Init() {
 		gluQuadricNormals(Equipment_other[i], GLU_SMOOTH);
 	}
 	for (int i = 0; i < 4; i++) {
-		Fire[i] = gluNewQuadric();
-		gluQuadricDrawStyle(Fire[i], GLU_FILL);
-		gluQuadricNormals(Fire[i], GLU_SMOOTH);
-
+		
 
 
 		Tail_wing_part[i] = gluNewQuadric();
@@ -51,9 +49,9 @@ void Character::Init() {
 		gluQuadricDrawStyle(Wing_other_part[i], GLU_FILL);
 		gluQuadricNormals(Wing_other_part[i], GLU_SMOOTH);
 	}
-	Fire[4] = gluNewQuadric();
-	gluQuadricDrawStyle(Fire[4], GLU_FILL);
-	gluQuadricNormals(Fire[4], GLU_SMOOTH);
+	Fire = gluNewQuadric();
+	gluQuadricDrawStyle(Fire, GLU_FILL);
+	gluQuadricNormals(Fire, GLU_SMOOTH);
 
 	for (int i = 0; i < 6; i++) {
 		Equipment[i] = gluNewQuadric();
@@ -86,27 +84,10 @@ void Character::Render() {
 	//glMultMatrixf(m_mtxlocalt);
 	//glMultMatrixf(m_mtxlocal);
 	if (Dead) {
-		glColor3f(1, 0, 0);
-		glPushMatrix(); {
-			glRotatef(10, 0, 0, 1);
-			gluCylinder(Fire[0], 10,0,20,20,8);
-		}glPopMatrix();
-		glPushMatrix(); {
-			glRotatef(5, 0, 0, 1);
-			gluCylinder(Fire[1], 10, 0, 20, 20, 8);
-		}glPopMatrix();
-		glPushMatrix(); {
-			glRotatef(-5, 0, 0, 1);
-			gluCylinder(Fire[2], 10, 0, 20, 20, 8);
-		}glPopMatrix();
-		glPushMatrix(); {
-			glRotatef(-10, 0, 0, 1);
-			gluCylinder(Fire[3], 10, 0, 20, 20, 8);
-		}glPopMatrix();
 		glColor3f(1, 1, 0);
 		glPushMatrix(); {
 			glTranslatef( 0, -5, 0);
-			gluSphere(Fire[4], 20, 20, 20);
+			gluSphere(Fire,Boom_Radius, 20, 20);
 		}glPopMatrix();
 	}
 
@@ -370,6 +351,11 @@ void Character::  Move() {
 	case true:
 		y_angle += 50.0f;
 		yPos -= 10;
+		if (Boom_Radius > 150) {
+			Boom_Radius = 150;
+		}
+		else
+		Boom_Radius += 10;
 		break;
 	default:
 		break;

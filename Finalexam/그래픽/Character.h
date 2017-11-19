@@ -15,9 +15,10 @@ protected:
 	GLUquadricObj *Equipment[6];
 	GLUquadricObj *Equipment_other[2];
 	
+	GLUquadricObj *Fire;
 
-	GLUquadricObj *Fire[5];
 
+	float Boom_Radius;
 	int speed;
 	float x_angle;
 	float z_angle;
