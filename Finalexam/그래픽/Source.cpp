@@ -168,6 +168,7 @@ GLvoid RenderScene(GLvoid) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
 	glEnable(GL_DEPTH_TEST);
+//	glEnable(GL_LIGHTING);
 	glLoadIdentity();
 
 	glTranslatef(0.0, 0.0, -300.0);
