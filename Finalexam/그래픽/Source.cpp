@@ -1,5 +1,6 @@
 #include"Character.h"
 #include"map.h"
+#include"CGameSystem.h"
 #define PIE 3.141592
 GLUquadricObj *qobj;
 
@@ -102,15 +103,8 @@ struct vector2 {
 
 double Color[3];
 
-float xPos = 0.0;
-float yPos = -0.0;
-float zPos = 0.0;
-
 
 //전체회전각도
-float xRotation = 0.0f;
-float yRotation = 0.0f;
-float zRotation = 0.0f;
 
 //카메라부분
 float Eyex = 0.0;
@@ -139,7 +133,7 @@ GLvoid GLMatrix();
 GLvoid SpecialKeyboard(int, int , int );
 GLvoid Motion(int, int);
 
-
+GLfloat specref[] = { 1.0f,1.0f,1.0f,1.0f };
 
 Character Main;
 CMap map;
@@ -168,15 +162,17 @@ GLvoid RenderScene(GLvoid) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
 	glEnable(GL_DEPTH_TEST);
-//	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_COLOR_MATERIAL);
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	glMaterialfv(GL_FRONT, GL_SPECULAR, specref);
+	glMateriali(GL_FRONT, GL_SHININESS, 128);
 	glLoadIdentity();
 
 	glTranslatef(0.0, 0.0, -300.0);
 	gluLookAt(Eyex, Eyey, Eyez,/**/ Centerx, Centery, Centerz, /**/ Upx, Upy, Upz);
 
-	glRotated(xRotation, 1.0f, 0.0f, 0.0f);
-	glRotated(yRotation, 0.0f, 1.0f, 0.0f);
-	glRotated(zRotation, 0.0f, 0.0f, 1.0f);
+
 
 	glTranslatef(0.0f, -50.0f, 0.0f);
 	map.Render();

@@ -23,6 +23,31 @@ void CIntro::Render() {
 	}glEnd();
 	glColor3f(1, 0, 0);
 	glBegin(GL_QUADS); {
+		glVertex3f(-200, -100, 0);
+		glVertex3f(-50, -100, 0);
+		glVertex3f(-50, -25, 0);
+		glVertex3f(-200, -25, 0);
 
+		glVertex3f(-200, -25, 0);
+		glVertex3f(-175, -25, 0);
+		glVertex3f(-175, 100, 0);
+		glVertex3f(-200, 100, 0);
+
+		glVertex3f(-175, 0, 0);
+		glVertex3f(-100, 0, 0);
+		glVertex3f(-100, 40, 0);
+		glVertex3f(-175, 40, 0);
+
+		glVertex3f(-25, -100, 0);
+		glVertex3f(25, -100, 0);
+		glVertex3f(25, 150, 0);
+		glVertex3f(-25,150, 0);
+
+		glVertex3f(80, -100, 0);
+		glVertex3f(160, -50, 0);
+		glVertex3f(130, -20, 0);
+		glVertex3f(50, -80, 0);
+
+		glVertex3f()
 	}glEnd();
 }

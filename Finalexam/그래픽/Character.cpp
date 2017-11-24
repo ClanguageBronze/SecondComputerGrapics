@@ -105,6 +105,7 @@ void Character::Render() {
 		
 
 		//¸öÅë
+	
 		glColor3f(0.2117f, 0.2705f, 0.3098f);
 		gluCylinder(body_obj, 20, 30, 50, 5, 8);
 		gluDisk(Tail_obj, 0.0, 20, 5, 3);

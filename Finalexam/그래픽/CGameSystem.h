@@ -1,8 +1,10 @@
 #pragma once
 #include"define.h"
 #include"CIntro.h"
+#include"CIngame.h"
 class CGameSystem {
 	CIntro* m_pIntro{ nullptr };
+	CIngame* m_pCIngame{ nullptr };
 	bool m_bIntro;
 	bool m_bFixed;
 	bool m_bGameOver{ false };
@@ -17,7 +19,4 @@ public:
 	void Update();
 	void Render();
 	void ChangeSize(int w, int h);
-
-
-
 };
