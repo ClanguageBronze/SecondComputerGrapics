@@ -1,6 +1,2 @@
-﻿  Source.cpp
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\그래픽\source.cpp(40): warning C4244: 'return': conversion from 'double' to 'const float', possible loss of data
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\그래픽\source.cpp(47): warning C4244: 'return': conversion from 'double' to 'const float', possible loss of data
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\그래픽\source.cpp(72): warning C4244: 'return': conversion from 'double' to 'const float', possible loss of data
-  그래픽.vcxproj -> C:\Users\Lenovo\Documents\GitHub\SecondComputerGrapics\Finalexam\Debug\그래픽.exe
+﻿  그래픽.vcxproj -> C:\Users\Lenovo\Documents\GitHub\SecondComputerGrapics\Finalexam\Debug\그래픽.exe
   그래픽.vcxproj -> C:\Users\Lenovo\Documents\GitHub\SecondComputerGrapics\Finalexam\Debug\그래픽.pdb (Full PDB)

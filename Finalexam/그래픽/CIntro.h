@@ -6,7 +6,6 @@ class CIntro{
 public:
 	CIntro();
 	~CIntro();
-	void Update();
 	void Render();
 	void Reshape(int, int);
 };
