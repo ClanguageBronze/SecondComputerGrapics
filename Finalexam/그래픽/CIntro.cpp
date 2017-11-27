@@ -48,6 +48,8 @@ void CIntro::Render() {
 		glVertex3f(130, -20, 0);
 		glVertex3f(50, -80, 0);
 
-		glVertex3f()
+		glVertex3f(180,-100,0);
+		glVertex3f(200, -80, 0);
+		glVertex3f(80,)
 	}glEnd();
 }
