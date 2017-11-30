@@ -1,0 +1,27 @@
+﻿  Source.cpp
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\source.cpp(42): warning C4244: 'return': 'double'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\source.cpp(49): warning C4244: 'return': 'double'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\source.cpp(74): warning C4244: 'return': 'double'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Character.cpp
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(102): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(164): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(171): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(180): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(186): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(195): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(201): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(208): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(214): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(221): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(227): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(234): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(241): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(256): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(262): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(276): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(282): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(319): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(328): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(416): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  Finalexam.vcxproj -> c:\users\lee\documents\visual studio 2015\Projects\Finalexam\Debug\Finalexam.exe

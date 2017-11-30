@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Scene">
+      <UniqueIdentifier>{18baf1a6-2893-47ff-9572-60565602df52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\Intro">
+      <UniqueIdentifier>{26830106-afd7-47fa-9bdc-f37686968471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\InGame">
+      <UniqueIdentifier>{ce90a7b8-e6e8-43b2-b557-c786e8b4cfb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SoundManager">
+      <UniqueIdentifier>{9f4b0ebd-b825-4b4b-b5b2-b8929439e2ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object">
+      <UniqueIdentifier>{4f6e9847-a29b-47b4-b0ce-30306f3584a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Map">
+      <UniqueIdentifier>{25821554-177f-4f3f-8e02-1295550a5cd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\MainCharacter">
+      <UniqueIdentifier>{6a6ee966-c5e3-4121-83cd-d80fe0d58b95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Obstacle">
+      <UniqueIdentifier>{444fd781-5611-41b0-936b-632270966611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Light">
+      <UniqueIdentifier>{c9c0f686-0bc7-473f-a5e9-113651e8fb29}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\GitHub\cg\SecondComputerGrapics\Finalexam\그래픽\define.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameSystem.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntro.h">
+      <Filter>소스 파일\Scene\Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="CIngame.h">
+      <Filter>소스 파일\Scene\InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="CSoundManager.h">
+      <Filter>SoundManager</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>소스 파일\Object\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>소스 파일\Object\MainCharacter</Filter>
+    </ClInclude>
+    <ClInclude Include="CObstacle.h">
+      <Filter>소스 파일\Object\Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="LIGHT.h">
+      <Filter>소스 파일\Object\Light</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CGameSystem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntro.cpp">
+      <Filter>소스 파일\Scene\Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="CIngame.cpp">
+      <Filter>소스 파일\Scene\InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="CSoundManager.cpp">
+      <Filter>SoundManager</Filter>
+    </ClCompile>
+    <ClCompile Include="map.cpp">
+      <Filter>소스 파일\Object\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>소스 파일\Object\MainCharacter</Filter>
+    </ClCompile>
+    <ClCompile Include="LIGHT.cpp">
+      <Filter>소스 파일\Object\Light</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
