@@ -1,27 +1,34 @@
-﻿  Source.cpp
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\source.cpp(42): warning C4244: 'return': 'double'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\source.cpp(49): warning C4244: 'return': 'double'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\source.cpp(74): warning C4244: 'return': 'double'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  CSphere.cpp
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\csphere.cpp(4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\csphere.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\csphere.cpp(17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Compiling...
   Character.cpp
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(102): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(164): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(171): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(180): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(186): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(195): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(201): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(208): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(214): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(221): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(227): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(234): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(241): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(256): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(262): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(276): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(282): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(319): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(328): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\visual studio 2015\projects\finalexam\finalexam\character.cpp(416): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
-  Finalexam.vcxproj -> c:\users\lee\documents\visual studio 2015\Projects\Finalexam\Debug\Finalexam.exe
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(105): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(170): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(177): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(186): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(192): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(201): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(207): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(214): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(220): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(227): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(233): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(240): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(247): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(262): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(268): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(282): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(288): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(325): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(334): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(423): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Source.cpp
+  CIngame.cpp
+  CGameSystem.cpp
+  Finalexam.vcxproj -> C:\Users\Lenovo\Documents\GitHub\SecondComputerGrapics\Finalexam\Debug\Finalexam.exe
+  Finalexam.vcxproj -> C:\Users\Lenovo\Documents\GitHub\SecondComputerGrapics\Finalexam\Debug\Finalexam.pdb (Full PDB)

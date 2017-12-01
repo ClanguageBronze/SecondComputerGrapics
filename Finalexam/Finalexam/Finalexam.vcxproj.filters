@@ -69,6 +69,9 @@
     <ClInclude Include="LIGHT.h">
       <Filter>소스 파일\Object\Light</Filter>
     </ClInclude>
+    <ClInclude Include="CSphere.h">
+      <Filter>소스 파일\Object\MainCharacter</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CGameSystem.cpp">
@@ -94,6 +97,9 @@
     </ClCompile>
     <ClCompile Include="LIGHT.cpp">
       <Filter>소스 파일\Object\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="CSphere.cpp">
+      <Filter>소스 파일\Object\MainCharacter</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

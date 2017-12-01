@@ -7,13 +7,15 @@ class CMap {
 	float distance;
 	float Start_point;
 	float End_point;
-
+	GLubyte *TexBits;
+	BITMAPINFO *info;
+	GLuint texture[2];
 public:
 	void Init();
 	void Render();
 	void Start_Render();
 	void Sky_Render();
 	void Go_animation();
-
+	GLubyte * LoadDIBitmap(const char *, BITMAPINFO **);
 };
 

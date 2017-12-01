@@ -149,6 +149,7 @@
     <ClInclude Include="CIntro.h" />
     <ClInclude Include="CObstacle.h" />
     <ClInclude Include="CSoundManager.h" />
+    <ClInclude Include="CSphere.h" />
     <ClInclude Include="LIGHT.h" />
     <ClInclude Include="map.h" />
   </ItemGroup>
@@ -158,6 +159,7 @@
     <ClCompile Include="CIngame.cpp" />
     <ClCompile Include="CIntro.cpp" />
     <ClCompile Include="CSoundManager.cpp" />
+    <ClCompile Include="CSphere.cpp" />
     <ClCompile Include="LIGHT.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="Source.cpp" />

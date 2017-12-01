@@ -1,5 +1,8 @@
 #include"Character.h"
 Character::Character() {
+	for (int i = 0; i < 40; i++) {
+		spee[i] = new CSphere;
+	}
 	for (int i = 0; i < 2; i++) {
 		Engine_obj[i] = gluNewQuadric();
 		gluQuadricDrawStyle(Engine_obj[i], GLU_FILL);
@@ -75,6 +78,7 @@ Character::~Character() {
 		gluDeleteQuadric(Engine_obj[i]);
 		gluDeleteQuadric(Equipment_other[i]);
 	}
+	for (int i = 0; i < 40; i++)delete spee[i];
 }
 void Character::Init() {
 	m_bMove = false;//이동가능 여부
@@ -94,8 +98,7 @@ void Character::Init() {
 	m_mtxlocal[0] = m_mtxlocal[5] = m_mtxlocal[10] = m_mtxlocal[15] = 1;
 	memset(m_mtxlocalt, 0, sizeof(m_mtxlocalt));
 	m_mtxlocalt[0] = m_mtxlocalt[5] = m_mtxlocalt[10] = m_mtxlocalt[15] = 1;
-	
-
+	for (int i = 0; i < 40; i++)spee[i]->Init();
 }
 void Character::Render() {
 	glPushMatrix();
@@ -150,10 +153,13 @@ void Character::Render() {
 			//출력부분.
 			glTranslatef(10, 0, -3);
 			gluCylinder(Engine_obj[0], 10, 6, 3, 6, 6);
+			for (int i = 0; i < 20; i++)spee[i]->Render();
 		}glPopMatrix();
 		glPushMatrix();
+		glColor3f(0.2117f, 0.2705f, 0.3098f);
 		glTranslatef(-10, 0, -3);
 		gluCylinder(Engine_obj[1], 10, 6, 3, 6, 6);
+		for (int i = 20; i < 40; i++)spee[i]->Render();
 		glPopMatrix();
 		glPushMatrix();
 		glColor3f(0.2117f, 0.2705f, 0.3098f);
@@ -340,6 +346,7 @@ void Character::  Move() {
 			glPopMatrix();
 		}
 	}
+	for (int i = 0; i < 40; i++)spee[i]->Particle();
 	
 	switch (m_bMove) {
 	case true:
@@ -484,7 +491,6 @@ void Character::Death() {
 		m_bMove = false;
 	}
 	if (Start_Z > START_DAY) {
-		
 		if (yPos < 215) {
 			Dead = true;
 			m_bMove = false;

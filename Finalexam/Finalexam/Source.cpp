@@ -1,6 +1,7 @@
 #include"Character.h"
 #include"map.h"
 #include"CGameSystem.h"
+#include"LIGHT.h"
 #include"define.h"
 #define PIE 3.141592
 GLUquadricObj *qobj;
@@ -134,11 +135,10 @@ GLvoid GLMatrix();
 GLvoid SpecialKeyboard(int, int , int );
 GLvoid Motion(int, int);
 
-GLfloat specref[] = { 1.0f,1.0f,1.0f,1.0f };
 
 Character *Main{nullptr};
 CMap map;
-
+LIGHT *light{ nullptr };
 void main(int argc, char*argv[]) {
 	srand((unsigned)time(NULL));
 	glutInit(&argc, argv);
@@ -164,11 +164,7 @@ GLvoid RenderScene(GLvoid) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
 	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_COLOR_MATERIAL);
-	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
-	glMaterialfv(GL_FRONT, GL_SPECULAR, specref);
-	glMateriali(GL_FRONT, GL_SHININESS, 128);
+	
 	glLoadIdentity();
 
 	glTranslatef(0.0, 0.0, -300.0);
@@ -179,7 +175,7 @@ GLvoid RenderScene(GLvoid) {
 	glTranslatef(0.0f, -50.0f, 0.0f);
 	map.Render();
 	Main->Render();
-
+	light->M_FLIGHTING();
 
 	glutSwapBuffers();
 }
@@ -263,6 +259,8 @@ GLvoid ChangeSize(int w, int h)//윈도위 크기 변경
 void Init() {
 	Main = new Character;
 	Main->Init();
+	light = new LIGHT(0, 500, 0, 1.0f);
+	light->Init();
 	map.Init();
 	Eyez = -10.0;
 	Centerz = 1.0;

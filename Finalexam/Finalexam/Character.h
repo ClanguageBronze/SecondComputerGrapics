@@ -1,5 +1,6 @@
 #pragma once
 #include"define.h"
+#include"CSphere.h"
 class Character {
 protected:
 	GLUquadricObj *body_obj;
@@ -14,7 +15,7 @@ protected:
 	GLUquadricObj *Tail_wing_otherpart[8];
 	GLUquadricObj *Equipment[6];
 	GLUquadricObj *Equipment_other[2];
-	
+	CSphere*spee[40]{ nullptr };
 	GLUquadricObj *Fire;
 
 
@@ -34,8 +35,7 @@ protected:
 
 	float Start_Z;
 	bool Dead;
-
-
+	
 	GLfloat m_mtxlocal[16];
 	GLfloat m_mtxlocalt[16];
 public:
