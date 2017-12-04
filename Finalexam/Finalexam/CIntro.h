@@ -3,6 +3,9 @@
 #include"CSoundManager.h"
 class CIntro{
 	bool m_bIntro;
+	GLubyte *Texbits;
+	BITMAPINFO *info;
+	GLuint texture[3];
 public:
 	CIntro();
 	~CIntro();

@@ -1,7 +1,30 @@
 #include"CIntro.h"
 CIntro::CIntro() {
-
-
+	glGenTextures(3, texture);
+	glBindTexture(GL_TEXTURE_2D, texture[0]);
+	Texbits = LoadDIBitmap("Title.bmp", &info);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, Texbits);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, GL_MODULATE);
+	glBindTexture(GL_TEXTURE_2D, texture[1]);
+	Texbits = LoadDIBitmap("START.bmp", &info);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, Texbits);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, GL_MODULATE);
+	glBindTexture(GL_TEXTURE_2D, texture[2]);
+	Texbits = LoadDIBitmap("Quit.bmp", &info);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, Texbits);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, GL_MODULATE);
 }
 CIntro::~CIntro() {
 
@@ -14,43 +37,38 @@ void CIntro::Reshape(int w, int h) {
 	glOrtho(-w / 2, w / 2, h / 2, -h / 2, -100, 100);
 }
 void CIntro::Render() {
-	glColor3f(0, 0, 0);
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, texture[0]);
 	glBegin(GL_QUADS); {
+		glTexCoord2f(0, 0);
 		glVertex2i(-400,-300);
+		glTexCoord2f(1, 0);
 		glVertex2i(-400, 300);
+		glTexCoord2f(1, 1);
 		glVertex2i(400, 300);
+		glTexCoord2f(0, 1);
 		glVertex2i(400, -300);
 	}glEnd();
-	glColor3f(1, 0, 0);
+	glBindTexture(GL_TEXTURE_2D, texture[1]);
 	glBegin(GL_QUADS); {
-		glVertex3f(-200, -100, 0);
-		glVertex3f(-50, -100, 0);
-		glVertex3f(-50, -25, 0);
-		glVertex3f(-200, -25, 0);
-
-		glVertex3f(-200, -25, 0);
-		glVertex3f(-175, -25, 0);
-		glVertex3f(-175, 100, 0);
-		glVertex3f(-200, 100, 0);
-
-		glVertex3f(-175, 0, 0);
-		glVertex3f(-100, 0, 0);
-		glVertex3f(-100, 40, 0);
-		glVertex3f(-175, 40, 0);
-
-		glVertex3f(-25, -100, 0);
-		glVertex3f(25, -100, 0);
-		glVertex3f(25, 150, 0);
-		glVertex3f(-25,150, 0);
-
-		glVertex3f(80, -100, 0);
-		glVertex3f(160, -50, 0);
-		glVertex3f(130, -20, 0);
-		glVertex3f(50, -80, 0);
-
-		glVertex3f(180,-100,0);
-		glVertex3f(200, -80, 0);
-		glVertex3f(80,0,0 );
-		glVertex3f(60, 20, 0);
+		glTexCoord2f(0, 0);
+		glVertex2i(-100, 100);
+		glTexCoord2f(1, 0);
+		glVertex2i(-100, 150);
+		glTexCoord2f(1, 1);
+		glVertex2i(100, 150);
+		glTexCoord2f(0, 1);
+		glVertex2i(100, 100);
+	}glEnd();
+	glBindTexture(GL_TEXTURE_2D, texture[2]);
+	glBegin(GL_QUADS); {
+		glTexCoord2f(0, 0);
+		glVertex2i(-100, 200);
+		glTexCoord2f(1, 0);
+		glVertex2i(-100, 250);
+		glTexCoord2f(1, 1);
+		glVertex2i(100, 250);
+		glTexCoord2f(0, 1);
+		glVertex2i(100, 200);
 	}glEnd();
 }

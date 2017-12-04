@@ -42,9 +42,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\GitHub\cg\SecondComputerGrapics\Finalexam\그래픽\define.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CGameSystem.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
@@ -71,6 +68,9 @@
     </ClInclude>
     <ClInclude Include="CSphere.h">
       <Filter>소스 파일\Object\MainCharacter</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
