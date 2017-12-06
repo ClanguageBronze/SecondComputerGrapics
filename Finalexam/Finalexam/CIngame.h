@@ -11,6 +11,6 @@ public:
 	void Getkey(const unsigned char, const int, const int);
 	void Render();
 	void Reshape(const int, const int);
-	
+	void Mousebutton(const int, const int, const int, const int);
 
 };

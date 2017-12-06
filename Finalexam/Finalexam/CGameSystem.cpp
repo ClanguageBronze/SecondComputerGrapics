@@ -1,9 +1,9 @@
 #include"CGameSystem.h"
 CGameSystem::CGameSystem() {
 	m_pIntro = new CIntro();
-	m_bIntro = true;
 	m_pCIngame = new CIngame();
-
+	m_pSoundManager = new CSoundManager();
+	m_pSoundManager->PlayBGM(INTRO);
 }
 CGameSystem::~CGameSystem() {
 	if (m_pIntro)
@@ -13,38 +13,63 @@ CGameSystem::~CGameSystem() {
 }
 
 void CGameSystem::SpecialKey(const int key , const int x, const int y ) {
-	switch (key) {
-		if (m_pCIngame){}
+	
+		if (m_pCIngame)m_pCIngame->Getkey(key, x, y);
 		else {
 			switch (key) {
 			case GLUT_KEY_DELETE:
 				exit(0);
 				break;
 			default:
-				if (m_bIntro) {
-					m_bIntro = false;
+				if (m_pIntro) {
 					delete m_pIntro;
 					m_pIntro = nullptr;
 				}
 				break;
 			}
-		}
+		
 	}
 }
 void CGameSystem::GetKey(const unsigned char key, const int x, const int y) {
-	switch (key) {
-	case 27:
-		exit(0);
-		break;
-
-
+	
+		if (m_pCIngame) {
+			m_pCIngame->Getkey(key, x, y);
+		}
+		else {
+			switch (key) {
+			default:
+				if (m_bGameOver) {
+					m_bGameOver = false;
+					m_pSoundManager->PlayBGM(INTRO);
+					m_pIntro = new CIntro();
+					delete m_pCIngame;
+					m_pCIngame = nullptr;
+				}
+				else if (m_pIntro) {
+					m_pSoundManager->PlayBGM(INGAME);
+					delete m_pIntro;
+					m_pIntro = nullptr;
+				}
+				break;
+		}
 	}
 }
 void CGameSystem::MouseButton(const int button, const int state, const int x, const int y) {
-	if (m_bIntro) {
+
+	if (m_bGameOver) {
+		m_bGameOver = false;
+		m_pSoundManager->PlayBGM(INTRO);
+		m_pIntro = new CIntro();
+		delete m_pCIngame;
+		m_pCIngame = nullptr;
+	}
+	else if (m_pCIngame) {
+		m_pCIngame->Mousebutton(button, state, x, y);
+		
+	}
+	else if (m_pIntro) {
 		if (button == GLUT_LEFT_BUTTON&&state == GLUT_UP && (-100 <= x&&x <= 100) && (100 <= y&&y <= 150)) {
 			if (!m_pCIngame) {
-				m_bIntro = false;
 				delete m_pIntro;
 				m_pIntro = nullptr;
 				m_pCIngame = new CIngame();

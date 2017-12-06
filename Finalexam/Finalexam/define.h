@@ -30,6 +30,7 @@
 #define WINDOW_SIZE_HEIGHT1 600
 #define WINDWO_sIZE_HEIGHT2 800
 
+#define INEXIT -1
 
 GLubyte * LoadDIBitmap(const char *filename, BITMAPINFO **info) {
 	FILE *fp;
