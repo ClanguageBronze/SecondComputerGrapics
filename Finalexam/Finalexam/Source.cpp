@@ -5,7 +5,7 @@
 #include"define.h"
 #define PIE 3.141592
 GLUquadricObj *qobj;
-
+CGameSystem* gamesys{ nullptr };
 struct vector3 {
 	union
 	{
@@ -143,7 +143,7 @@ void main(int argc, char*argv[]) {
 	srand((unsigned)time(NULL));
 	glutInit(&argc, argv);
 	glutInitWindowPosition(0, 0);
-	glutInitWindowSize(1400, 600);
+	glutInitWindowSize(800, 600);
 	glutCreateWindow("Final");
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	SetupRC();
@@ -161,60 +161,20 @@ void main(int argc, char*argv[]) {
 }
 
 GLvoid RenderScene(GLvoid) {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glMatrixMode(GL_MODELVIEW);
-	glEnable(GL_DEPTH_TEST);
-	
-	glLoadIdentity();
-
-	glTranslatef(0.0, 0.0, -300.0);
-	gluLookAt(Eyex, Eyey, Eyez,/**/ Centerx, Centery, Centerz, /**/ Upx, Upy, Upz);
-
-
-
-	glTranslatef(0.0f, -50.0f, 0.0f);
-	map.Render();
-	Main->Render();
-	light->M_FLIGHTING();
-
-	glutSwapBuffers();
+	gamesys->Render();
 }
 void Mouse(int button, int state, int x, int y) {
-	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-
-
-
-
-	}
+	gamesys->MouseButton(button, state, x, y);
 }
 void TimerFunction(int value) {
-	switch (value) {
-	case 1:
 
-		Eyez += 10;
-		Centerz += 10;
-		if (Eyez > START_DAY - 310 && Eyez < START_DAY - 10) {
-			Eyey += 10;
-			Centery += 10;
-		}
-		Main->Move();
-		Main->Update();
-		glutPostRedisplay();
-		glutTimerFunc(100, TimerFunction, 1);
-		break;
-	case 2:
-		Main->M_Ffalling();
-		glutPostRedisplay();
-		glutTimerFunc(200, TimerFunction, 2);
-		break;
-	}
 }
 
 void Keyboard(unsigned char key, int x, int y) {
-	Main->GetKey(key, x, y);
+	gamesys->GetKey(key, x, y);
 }
 GLvoid SpecialKeyboard(int key, int x, int y) {
-	Main->Getspecial(key, x, y);
+//	Main->Getspecial(key, x, y);
 }
 
 void Quit() {
@@ -229,34 +189,12 @@ void SetupRC() {
 
 GLvoid ChangeSize(int w, int h)//윈도위 크기 변경
 {
-	GLfloat nRange = 250.0f;
-	// h가 0일 때
-	if (h == 0)
-		h = 1;
-	// 윈도우의 폭과 넓이 설정
-	glViewport(0, 0, w, h);
-	// 투영 행렬 스택 재설정
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	// 클리핑 공간 설정
-	if (w <= h)
-		glOrtho(-nRange, nRange, -nRange*h / w, nRange*h / w, -nRange, nRange);
-	else
-		glOrtho(-nRange*w / h, nRange*w / h, -nRange, nRange, -nRange, nRange);
-	float fAspect;
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	fAspect = (float)w / (float)h;
-	gluPerspective(45.0, fAspect, 1.0, 500.0);
-	// 모델 뷰 행렬 스택 재설정
-	glMatrixMode(GL_MODELVIEW);
-	// 관측 변홖: 카메라의 위치 설정 (필요핚 경우)
-	//gluLookAt (Eyex, Eyey, Eyez,/**/ Centerx, Centery,Centerz, /**/ Upx, Upy, Upz);
-	glLoadIdentity();
+	gamesys->ChangeSize(w, h);
 }
 
 
 void Init() {
+	gamesys = new CGameSystem;
 	Main = new Character;
 	Main->Init();
 	light = new LIGHT(0, 500, 0, 1.0f);
@@ -267,5 +205,5 @@ void Init() {
 }
 
 GLvoid Motion(int x, int y) {
-
+	gamesys->MouseMotion(x, y);
 }

@@ -11,4 +11,5 @@ public:
 	~CIntro();
 	void Render();
 	void Reshape(int, int);
+	GLubyte* loadDIBitmap(const char*, BITMAPINFO**);
 };

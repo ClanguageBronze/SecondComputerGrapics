@@ -1,9 +1,11 @@
 #pragma once
 #include"define.h"
 #include"Character.h"
+#include"CSoundManager.h"
 #include"CObstacle.h"
 class CIngame {
-
+	Character* Main{ nullptr };
+	CSoundManager* SoundManager{ nullptr };
 public:
 	CIngame();
 	~CIngame();

@@ -1,34 +1,4 @@
-﻿  CSphere.cpp
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\csphere.cpp(4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\csphere.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\csphere.cpp(17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-  Compiling...
-  Character.cpp
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(105): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(170): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(177): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(186): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(192): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(201): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(207): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(214): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(220): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(227): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(233): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(240): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(247): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(262): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(268): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(282): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(288): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(325): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(334): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\character.cpp(423): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  Source.cpp
-  CIngame.cpp
-  CGameSystem.cpp
-  Finalexam.vcxproj -> C:\Users\Lenovo\Documents\GitHub\SecondComputerGrapics\Finalexam\Debug\Finalexam.exe
-  Finalexam.vcxproj -> C:\Users\Lenovo\Documents\GitHub\SecondComputerGrapics\Finalexam\Debug\Finalexam.pdb (Full PDB)
+﻿  CGameSystem.cpp
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cgamesystem.cpp(124): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 'fopen' 선언을 참조하십시오.
+  Finalexam.vcxproj -> C:\Users\lee\Documents\GitHub\cg\SecondComputerGrapics\Finalexam\Debug\Finalexam.exe
