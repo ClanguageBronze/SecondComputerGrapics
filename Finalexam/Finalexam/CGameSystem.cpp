@@ -1,5 +1,6 @@
 #include"CGameSystem.h"
 CGameSystem::CGameSystem() {
+
 	m_pSoundManager = new CSoundManager();
 	m_pSoundManager->PlayBGM(INTRO); glGenTextures(3, texture);
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
@@ -28,93 +29,116 @@ CGameSystem::CGameSystem() {
 	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, GL_MODULATE);
 }
 CGameSystem::~CGameSystem() {
-	
+	if (m_pCIngame)delete m_pCIngame;
 }
 
 void CGameSystem::SpecialKey(const int key , const int x, const int y ) {
-	
-	
-			switch (key) {
-			case GLUT_KEY_DELETE:
-				exit(0);
-				break;
-			default:
-			
-				break;
-			}
+	if (m_pCIngame) {
+		if (key == GLUT_KEY_END) {
+			delete m_pCIngame;
+			exit(1);
 		
-	
+		}
+	}
+	else {
+		switch (key) {
+		case GLUT_KEY_DELETE:
+			exit(0);
+			break;
+		default:
+
+			break;
+		}
+
+	}
 }
 void CGameSystem::GetKey(const unsigned char key, const int x, const int y) {
-	if (key == 'q' || key == 'Q')
-	{
-		exit(1);
+	if (m_pCIngame) {
+		m_pCIngame->Getkey(key, x, y);
 	}
-	
+	else {
+		if (key == 'q' || key == 'Q')
+		{
+			exit(1);
+		}
+		if (key == 's' || key == 'S') {
+			m_pCIngame = new CIngame;
+			m_pCIngame->Init();
+		}
+	}
 		
 	
 }
 void CGameSystem::MouseButton(const int button, const int state, int x, int y) {
 	mouse_x = x - 400;
 	mouse_y = y - 300;
-	if (button == GLUT_LEFT_BUTTON&&state == GLUT_UP) {
-		if (-100 <= mouse_x&&mouse_x <= 100 && 200 <= mouse_y&&mouse_y <= 250) { 
-			exit(1);
+	if (!m_pCIngame) {
+		if (button == GLUT_LEFT_BUTTON&&state == GLUT_UP) {
+			if (-100 <= mouse_x&&mouse_x <= 100 && 200 <= mouse_y&&mouse_y <= 250) {
+				exit(1);
+			}
+			if (-100 <= mouse_x&&mouse_x <= 100 && 100 <= mouse_y&&mouse_y <= 150) {
+				m_pCIngame = new CIngame;
+				m_pCIngame->Init();
+			}
 		}
 	}
 
 	
 }
 void CGameSystem::MouseMotion( int x, int y) {
-	
+	if (m_pCIngame)m_pCIngame->MouseMotion(x,y);
 }
 void CGameSystem::Update(int value) {
-
+	if (m_pCIngame)m_pCIngame->Update(value);
 }
 void CGameSystem::ChangeSize(int w, int h) {
-
-	glViewport(0, 0, w, h);
-	glOrtho(-w / 2, w / 2, -h / 2, h / 2, -100, 100);
-	
+	if (m_pCIngame)m_pCIngame->Reshape(w, h);
+	else {
+		glViewport(0, 0, w, h);
+		glOrtho(-w / 2, w / 2, -h / 2, h / 2, -100, 100);
+	}
 }
 void CGameSystem::Render() {
-	glClear(GL_COLOR_BUFFER_BIT);
-	glMatrixMode(GL_MODELVIEW);
-	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, texture[0]);
-	glBegin(GL_QUADS); {
-		glTexCoord2f(0, 0);
-		glVertex3f(-400, -300, 0);
-		glTexCoord2f(0, 1);
-		glVertex3f(-400, 300, 0);
-		glTexCoord2f(1, 1);
-		glVertex3f(400, 300, 0);
-		glTexCoord2f(1, 0);
-		glVertex3f(400, -300, 0);
-	}glEnd();
-	glBindTexture(GL_TEXTURE_2D, texture[1]);
-	glBegin(GL_QUADS); {
-		glTexCoord2f(0, 1);
-		glVertex3f(-100, -100, 0);
-		glTexCoord2f(0, 0);
-		glVertex3f(-100, -150, 0);
-		glTexCoord2f(1, 0);
-		glVertex3f(100, -150, 0);
-		glTexCoord2f(1, 1);
-		glVertex3f(100, -100, 0);
-	}glEnd();
-	glBindTexture(GL_TEXTURE_2D, texture[2]);
-	glBegin(GL_QUADS); {
-		glTexCoord2f(0, 1);
-		glVertex2i(-100, -200);
-		glTexCoord2f(0, 0);
-		glVertex2i(-100, -250);
-		glTexCoord2f(1, 0);
-		glVertex2i(100, -250);
-		glTexCoord2f(1, 1);
-		glVertex2i(100, -200);
-	}glEnd();
-	glutSwapBuffers();
+	if (m_pCIngame)m_pCIngame->Render();
+	else {
+		glClear(GL_COLOR_BUFFER_BIT);
+		glMatrixMode(GL_MODELVIEW);
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, texture[0]);
+		glBegin(GL_QUADS); {
+			glTexCoord2f(0, 0);
+			glVertex3f(-400, -300, 0);
+			glTexCoord2f(0, 1);
+			glVertex3f(-400, 300, 0);
+			glTexCoord2f(1, 1);
+			glVertex3f(400, 300, 0);
+			glTexCoord2f(1, 0);
+			glVertex3f(400, -300, 0);
+		}glEnd();
+		glBindTexture(GL_TEXTURE_2D, texture[1]);
+		glBegin(GL_QUADS); {
+			glTexCoord2f(0, 1);
+			glVertex3f(-100, -100, 0);
+			glTexCoord2f(0, 0);
+			glVertex3f(-100, -150, 0);
+			glTexCoord2f(1, 0);
+			glVertex3f(100, -150, 0);
+			glTexCoord2f(1, 1);
+			glVertex3f(100, -100, 0);
+		}glEnd();
+		glBindTexture(GL_TEXTURE_2D, texture[2]);
+		glBegin(GL_QUADS); {
+			glTexCoord2f(0, 1);
+			glVertex2i(-100, -200);
+			glTexCoord2f(0, 0);
+			glVertex2i(-100, -250);
+			glTexCoord2f(1, 0);
+			glVertex2i(100, -250);
+			glTexCoord2f(1, 1);
+			glVertex2i(100, -200);
+		}glEnd();
+	}
 }
 GLubyte* CGameSystem::loadDIBitmap(const char*filename, BITMAPINFO **info) {
 	FILE *fp;

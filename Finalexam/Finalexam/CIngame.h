@@ -29,4 +29,5 @@ public:
 	void Mousebutton(const int, const int, const int, const int);
 	void MouseMotion(int, int);
 	void Update(int);
+	void Filming();
 };

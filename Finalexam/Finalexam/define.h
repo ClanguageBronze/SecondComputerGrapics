@@ -31,5 +31,4 @@
 #define WINDWO_sIZE_HEIGHT2 800
 
 #define INEXIT -1
-
-
+#define SPEED 10

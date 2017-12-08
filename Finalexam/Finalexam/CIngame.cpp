@@ -2,12 +2,12 @@
 
 CIngame::CIngame() {
 	Main = new Character;
-	light = new LIGHT(0, 430, 50000,1);
+	light = new LIGHT(0, 500, 0,1);
 	map = new CMap;
 	SoundManager = new CSoundManager;
 	Eyex = 0.0;
 	Eyey = 0.0;
-	Eyez = 10.0;
+	Eyez = -10.0;
 	Centerx = 0.0;
 	Centery = 0.0;
 	Centerz = 1.0;
@@ -22,28 +22,28 @@ CIngame::~CIngame(){
 	delete SoundManager;
 }
 void CIngame::Init() {
-
+	Main->Init();
+	light->Init();
+	map->Init();
 }
 
-void CIngame::Mousebutton(const int button, const int state, const int x, const int y) {
-
-}
+void CIngame::Mousebutton(const int button, const int state, const int x, const int y) {}
 void CIngame::Getkey(const unsigned char key, const int x, const int y) {
 	Main->GetKey(key, x, y);
 }
-
+void CIngame::MouseMotion(int x,int y){}
 
 void CIngame::Render() {
-	srand((unsigned)time(NULL));
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glEnable(GL_DEPTH_TEST);
 	glMatrixMode(GL_MODELVIEW);
-	gluLookAt(Eyex,Eyey,Eyez,Centerx,Centery,Centerz,Upx,Upy,Upz);
-	light->M_FLIGHTING();
-	glLoadIdentity();
+	glEnable(GL_DEPTH_TEST);
+//	glLoadIdentity();
+	glTranslatef(0.0, 0.0, -300.0);
+	gluLookAt(Eyex, Eyey, Eyez, Centerx, Centery, Centerz, Upx, Upy, Upz);
+//	glTranslatef(0.0, -50.0, 0.0);
 	Main->Render();
 	map->Render();
-	glutSwapBuffers();
+	light->M_FLIGHTING();
 }
 void CIngame::Reshape(int w, int h) {
 	GLfloat nRange = 250.0f;
@@ -74,12 +74,20 @@ void CIngame::Reshape(int w, int h) {
 void CIngame::Update(int value) {
 	switch (value) {
 	case 1:
-		
 		Main->Move();
-		
+		Filming();
 		break;
 	case 2:
 		Main->M_Ffalling();
 		break;
 	}
+}
+void CIngame::Filming() {
+	Eyez += SPEED;
+	Centerz += SPEED;
+	if (Eyez > START_DAY - 310 && Eyez < START_DAY - 10) {
+		Eyey += SPEED;
+		Centery += SPEED;
+	}
+
 }

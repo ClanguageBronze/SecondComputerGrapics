@@ -153,19 +153,31 @@ void main(int argc, char*argv[]) {
 
 GLvoid RenderScene(GLvoid) {
 	gamesys->Render();
+	glutSwapBuffers();
 }
 void Mouse(int button, int state, int x, int y) {
 	gamesys->MouseButton(button, state, x, y);
 }
 void TimerFunction(int value) {
-
+	switch (value) {
+	case 1:
+		gamesys->Update(value);
+		glutPostRedisplay();
+		glutTimerFunc(100, TimerFunction, 1);
+		break;
+	case 2:
+		gamesys->Update(value);
+		glutPostRedisplay();
+		glutTimerFunc(200, TimerFunction, 1);
+		break;
+	}
 }
 
 void Keyboard(unsigned char key, int x, int y) {
 	gamesys->GetKey(key, x, y);
 }
 GLvoid SpecialKeyboard(int key, int x, int y) {
-//	Main->Getspecial(key, x, y);
+	gamesys->SpecialKey(key, x, y);
 }
 
 void Quit() {
@@ -191,8 +203,7 @@ void Init() {
 	light = new LIGHT(0, 500, 0, 1.0f);
 	light->Init();
 	map.Init();
-	Eyez = -10.0;
-	Centerz = 1.0;
+
 }
 
 GLvoid Motion(int x, int y) {

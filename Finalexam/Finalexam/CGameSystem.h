@@ -4,7 +4,6 @@
 #include"CSoundManager.h"
 #include"CIngame.h"
 class CGameSystem {
-	CIntro* m_pIntro{ nullptr };
 	CIngame* m_pCIngame{ nullptr };
 	CSoundManager* m_pSoundManager{ nullptr };
 	bool m_bIntro;

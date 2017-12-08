@@ -316,13 +316,13 @@ void Character::M_Ffalling() {
 
 
 void Character::  Move() {
-	Start_Z += speed;
+	Start_Z += SPEED;
 	if (Start_Z > START_DAY) {
 		m_bMove = true;
 	}
 	glPushMatrix(); {
 		glLoadIdentity();
-		glTranslatef(0.0, 0.0, speed);
+		glTranslatef(0.0, 0.0, SPEED);
 		glMultMatrixf(m_mtxlocalt);
 		glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocalt);
 	}glPopMatrix();
@@ -496,11 +496,4 @@ void Character::Death() {
 }
 void Character::Update() {
 	
-	/*if (hp < 0.0) {
-		hp = -1;
-	}
-	else {
-		hp-=1.0;
-	}
-	Death();*/
 }
