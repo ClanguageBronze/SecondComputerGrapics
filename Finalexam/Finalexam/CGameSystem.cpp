@@ -68,7 +68,7 @@ void CGameSystem::MouseButton(const int button, const int state, int x, int y) {
 void CGameSystem::MouseMotion( int x, int y) {
 	
 }
-void CGameSystem::Update() {
+void CGameSystem::Update(int value) {
 
 }
 void CGameSystem::ChangeSize(int w, int h) {

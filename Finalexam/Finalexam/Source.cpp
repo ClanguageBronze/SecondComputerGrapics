@@ -109,15 +109,6 @@ double Color[3];
 //전체회전각도
 
 //카메라부분
-float Eyex = 0.0;
-float Eyey = 0.0;
-float Eyez = 10.0;
-float Centerx = 0.0;
-float Centery = 0.0;
-float Centerz = 1.0;
-float Upx = 0.0;
-float Upy = 1.0;
-float Upz = 0.0;
 
 GLfloat m_mtxLocal[16];
 GLfloat m_mtxLocalT[16];

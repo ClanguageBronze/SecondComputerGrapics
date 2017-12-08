@@ -23,7 +23,7 @@ public:
 	void SpecialKey(const int, const int, const int);
 	void MouseButton(const int ,const int ,int, int);
 	void MouseMotion( int,  int);
-	void Update();
+	void Update(int);
 	void Render();
 	GLubyte* loadDIBitmap(const char*, BITMAPINFO**);
 	void ChangeSize(int w, int h);

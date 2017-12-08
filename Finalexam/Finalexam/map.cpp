@@ -1,9 +1,5 @@
 #include"map.h"
-
-
-void CMap::Init() {
-	Start_point = 0.0;
-	End_point = RESULT;
+CMap::CMap() {
 	glGenTextures(2, texture);
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
 	TexBits = LoadDIBitmap("opengl.bmp", &info);
@@ -21,6 +17,14 @@ void CMap::Init() {
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, GL_MODULATE);
+
+
+}
+CMap::~CMap(){}
+
+void CMap::Init() {
+	Start_point = 0.0;
+	End_point = RESULT;
 
 }
 

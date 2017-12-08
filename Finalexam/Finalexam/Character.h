@@ -46,7 +46,6 @@ public:
 	void Render();
 	void Move();
 	void Collision();
-	void Getspecial(const int, const int,const int);
 	void GetKey(const unsigned char, const int, const int);
 	void Death();
 	void Update();

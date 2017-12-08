@@ -11,6 +11,8 @@ class CMap {
 	BITMAPINFO *info;
 	GLuint texture[2];
 public:
+	CMap();
+	~CMap();
 	void Init();
 	void Render();
 	void Start_Render();

@@ -407,9 +407,6 @@ void Character::  Move() {
 	
 	
 }
-void Character::Getspecial(const int key, const int x, const int y) {
-	
-}
 
 void Character::GetKey(const unsigned char key, const int x, const int y) {
 	if (m_bMove) {
