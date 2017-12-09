@@ -18,7 +18,7 @@ protected:
 	CSphere*spee[40]{ nullptr };
 	GLUquadricObj *Fire;
 
-
+	int Fast_Z;
 	float Boom_Radius;
 	int speed;
 	float x_angle;
@@ -32,13 +32,16 @@ protected:
 	int direction = 0;
 	bool m_bMove;
 
-
-	float Start_Z;
+	bool drop;
+	int Start_Z;
 	bool Dead;
-	
+	int Break_x;
+	int Break_y;
+	int Break_z;
 	GLfloat m_mtxlocal[16];
 	GLfloat m_mtxlocalt[16];
 public:
+	bool M_FDead();
 	Character();
 	~Character();
 	void M_Ffalling();
@@ -46,7 +49,7 @@ public:
 	void Render();
 	void Move();
 	void Collision();
-	void GetKey(const unsigned char, const int, const int);
+	void GetKey( unsigned char,  int,  int);
 	void Death();
 	void Update();
 };

@@ -1,6 +1,17 @@
 #include"CIntro.h"
 
 CIntro::CIntro() {
+	Eyex = 0.0;
+	Eyey = 0.0;
+	Eyez = -10.0;
+	Centerx = 0.0;
+	Centery = 0.0;
+	Centerz = 1.0;
+	Upx = 0.0;
+	Upy = 1.0;
+	Upz = 0.0;
+	light = new LIGHT(0, 0, -5,1.0);
+	light->Init();
 	glGenTextures(3, texture);
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
 	Texbits = loadDIBitmap("Title.bmp", &info);
@@ -31,49 +42,49 @@ CIntro::~CIntro() {
 
 
 }
-void CIntro::Reshape(int w, int h) {
 
-	glViewport(0, 0, w, h);
-	glOrtho(-w / 2, w / 2, -h / 2, h / 2, -100, 100);
-}
 void CIntro::Render() {
-	glClear(GL_COLOR_BUFFER_BIT);
-	glMatrixMode(GL_MODELVIEW);
+//	glEnable(GL_DEPTH_TEST);
+	light->M_FLIGHTING();
+	glLoadIdentity();
+	glTranslatef(0.0, 0.0, -300.0);
+	gluLookAt(Eyex, Eyey, Eyez, Centerx, Centery, Centerz, Upx, Upy, Upz);
+	glTranslatef(0.0, -50.0, 0.0);
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
 	glBegin(GL_QUADS); {
 		glTexCoord2f(0, 0);
-		glVertex3f(-400, -300, 0);
+		glVertex3f(175, -90, 0.0);
 		glTexCoord2f(0, 1);
-		glVertex3f(-400, 300, 0);
+		glVertex3f(175, 180, 0.0);
 		glTexCoord2f(1, 1);
-		glVertex3f(400, 300, 0);
+		glVertex3f(-175, 180, 0.0);
 		glTexCoord2f(1, 0);
-		glVertex3f(400, -300, 0);
+		glVertex3f(-175, -90, 0.0);
 	}glEnd();
 	glBindTexture(GL_TEXTURE_2D, texture[1]);
 	glBegin(GL_QUADS); {
 		glTexCoord2f(0, 1);
-		glVertex3f(-100, -100, 0);
+		glVertex3f(175, 10, -0.1);
 		glTexCoord2f(0, 0);
-		glVertex3f(-100, -150, 0);
+		glVertex3f(175, -20, -0.1);
 		glTexCoord2f(1, 0);
-		glVertex3f(100, -150, 0);
+		glVertex3f(-150, -20, -0.1);
 		glTexCoord2f(1, 1);
-		glVertex3f(100, -100, 0);
+		glVertex3f(-150, 10, -0.1);
 	}glEnd();
 	glBindTexture(GL_TEXTURE_2D, texture[2]);
 	glBegin(GL_QUADS); {
 		glTexCoord2f(0, 1);
-		glVertex2i(-100, -200);
+		glVertex3f(175, -35, -0.1);
 		glTexCoord2f(0, 0);
-		glVertex2i(-100, -250);
+		glVertex3f(175, -65, -0.1);
 		glTexCoord2f(1, 0);
-		glVertex2i(100, -250);
+		glVertex3f(-175, -65, -0.1);
 		glTexCoord2f(1, 1);
-		glVertex2i(100, -200);
+		glVertex3f(-175, -35, -0.1);
 	}glEnd();
-	glutSwapBuffers();
+
 }
 
 

@@ -150,6 +150,7 @@
     <ClInclude Include="CSoundManager.h" />
     <ClInclude Include="CSphere.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="LIGHT.h" />
     <ClInclude Include="map.h" />
   </ItemGroup>
@@ -160,6 +161,7 @@
     <ClCompile Include="CIntro.cpp" />
     <ClCompile Include="CSoundManager.cpp" />
     <ClCompile Include="CSphere.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="LIGHT.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="Source.cpp" />

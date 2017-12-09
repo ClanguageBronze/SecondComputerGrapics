@@ -40,6 +40,9 @@
     <Filter Include="소스 파일\Object\Light">
       <UniqueIdentifier>{c9c0f686-0bc7-473f-a5e9-113651e8fb29}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Scene\GameOver">
+      <UniqueIdentifier>{72095897-879a-4b62-afa7-be5fac5819de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CGameSystem.h">
@@ -72,6 +75,9 @@
     <ClInclude Include="define.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <Filter>소스 파일\Scene\GameOver</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CGameSystem.cpp">
@@ -100,6 +106,9 @@
     </ClCompile>
     <ClCompile Include="CSphere.cpp">
       <Filter>소스 파일\Object\MainCharacter</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOver.cpp">
+      <Filter>소스 파일\Scene\GameOver</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

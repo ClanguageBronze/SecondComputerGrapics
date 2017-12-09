@@ -32,3 +32,5 @@
 
 #define INEXIT -1
 #define SPEED 10
+
+#define UPDATE_FPS 100

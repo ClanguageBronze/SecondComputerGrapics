@@ -19,15 +19,18 @@ class CIngame {
 	float Upx;
 	float Upy;
 	float Upz;
+	int speed;
+	int line;
+	int Fast_z;
 public:
 	CIngame();
 	~CIngame();
 	void Init();
-	void Getkey(const unsigned char, const int, const int);
+	void Getkey(unsigned char,  int,  int);
 	void Render();
-	void Reshape(const int, const int);
-	void Mousebutton(const int, const int, const int, const int);
+	void Mousebutton( int, int,int,int);
 	void MouseMotion(int, int);
-	void Update(int);
+	void Update();
 	void Filming();
+	bool M_FDead();
 };

@@ -9,7 +9,7 @@ class CMap {
 	float End_point;
 	GLubyte *TexBits;
 	BITMAPINFO *info;
-	GLuint texture[2];
+	GLuint texture[5];
 public:
 	CMap();
 	~CMap();

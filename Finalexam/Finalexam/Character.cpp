@@ -81,8 +81,13 @@ Character::~Character() {
 	for (int i = 0; i < 40; i++)delete spee[i];
 }
 void Character::Init() {
+	Fast_Z = 0;
+	drop = false;
+	Break_x = 0;
+	Break_y = 0;
+	Break_z = 0;
 	m_bMove = false;//이동가능 여부
-	speed = 10;
+	speed = 0;
 	direction = 0;
 	x_angle = 0.0f;
 	z_angle = 0.0f;
@@ -107,13 +112,7 @@ void Character::Render() {
 
 	//glMultMatrixf(m_mtxlocalt);
 	//glMultMatrixf(m_mtxlocal);
-	if (Dead) {
-		glColor3f(1, 1, 0);
-		glPushMatrix(); {
-			glTranslatef( 0, -5, 0);
-			gluSphere(Fire,Boom_Radius, 20, 20);
-		}glPopMatrix();
-	}
+	
 
 
 	glRotatef(x_angle, 1, 0, 0);
@@ -129,13 +128,14 @@ void Character::Render() {
 		
 
 		//몸통
-	
+		glPushMatrix();
+		glTranslatef(0.0, -Break_y, 0.0);
 		glColor3f(0.2117f, 0.2705f, 0.3098f);
 		gluCylinder(body_obj, 20, 30, 50, 5, 8);
 		gluDisk(Tail_obj, 0.0, 20, 5, 3);
-
+		glPopMatrix();
 		glPushMatrix(); {//앞부분
-			glTranslatef(0.0, 0.0, 50.0);
+			glTranslatef(0.0, 0.0, 50.0+Break_z);
 			gluCylinder(Front_obj, 30, 15, 15, 5, 8);
 			glPushMatrix(); {
 				glColor3f(0.2627f, 0.8549f, 0.9254f);//67,218,236
@@ -146,26 +146,26 @@ void Character::Render() {
 		}glPopMatrix();
 		glColor3f(0.2117f, 0.2705f, 0.3098f);
 		glPushMatrix(); {//앞부분
-			glTranslatef(0.0, 0.0, 65.0);
+			glTranslatef(0.0, 0.0, 65.0+Break_z);
 			gluCylinder(Mouth_obj, 15, 0.0, 20, 5, 8);
 		}glPopMatrix();
 		glPushMatrix(); {
 			//출력부분.
-			glTranslatef(10, 0, -3);
+			glTranslatef(10, 0, -3-Break_z);
 			gluCylinder(Engine_obj[0], 10, 6, 3, 6, 6);
 			for (int i = 0; i < 20; i++)spee[i]->Render();
 		}glPopMatrix();
 		glPushMatrix();
 		glColor3f(0.2117f, 0.2705f, 0.3098f);
-		glTranslatef(-10, 0, -3);
+		glTranslatef(-10, 0, -3-Break_z);
 		gluCylinder(Engine_obj[1], 10, 6, 3, 6, 6);
-		for (int i = 20; i < 40; i++)spee[i]->Render();
+		if(!Dead)for (int i = 20; i < 40; i++)spee[i]->Render();
 		glPopMatrix();
 		glPushMatrix();
 		glColor3f(0.2117f, 0.2705f, 0.3098f);
 		glPushMatrix();
 
-		glTranslatef(50, 0, 25);
+		glTranslatef(50+Break_x, 0, 25);
 		//glRotatef(-36.0, 0.0, 0.0, 1.0);
 		glScalef(1.0, 0.1, 1.0);
 		glRotatef(10, 0.0, 1.0, 0.0);
@@ -181,7 +181,7 @@ void Character::Render() {
 
 		glPushMatrix();
 
-		glTranslatef(-50, 0, 25);
+		glTranslatef(-50-Break_x, 0, 25);
 		glRotatef(-10, 0.0, 1.0, 0.0);
 		glScalef(1.0, 0.1, 1.0);
 		gluCylinder(Wing_part[1], 60, 60, 10, 4, 20);
@@ -196,7 +196,7 @@ void Character::Render() {
 
 		//꼬리부분
 		glPushMatrix();
-		glTranslatef(30.0, 0.0, 0.0);
+		glTranslatef(30.0+Break_x, 0.0, 0.0);
 		glRotatef(10, 0.0, 1.0, 0.0);
 		glScalef(1.0, 0.1, 1.0);
 		gluCylinder(Tail_wing_part[0], 30, 30, 8, 4, 20);
@@ -209,7 +209,7 @@ void Character::Render() {
 		glPopMatrix();
 		glPopMatrix();
 		glPushMatrix();
-		glTranslatef(-30.0, 0.0, 0.0);
+		glTranslatef(-30.0-Break_x, 0.0, 0.0);
 		glRotatef(-10, 0.0, 1.0, 0.0);
 		glScalef(1.0, 0.1, 1.0);
 		gluCylinder(Tail_wing_part[1], 30, 30, 8, 4, 20);
@@ -222,7 +222,7 @@ void Character::Render() {
 		glPopMatrix();
 		glPopMatrix();
 		glPushMatrix();
-		glTranslatef(20.0, 8.0, 5.0);
+		glTranslatef(20.0+Break_x, 8.0, 5.0);
 		glRotatef(60, 0.0, 0.0, 1.0);
 		glScalef(1.0, 0.1, 1.0);
 		gluCylinder(Tail_wing_part[2], 30, 30, 6, 4, 20);
@@ -235,7 +235,7 @@ void Character::Render() {
 		glPopMatrix();
 		glPopMatrix();
 		glPushMatrix();
-		glTranslatef(-20.0, 8.0, 5.0);
+		glTranslatef(-20.0-Break_x, 8.0, 5.0);
 		glRotatef(-60, 0.0, 0.0, 1.0);
 		glScalef(1.0, 0.1, 1.0);
 
@@ -252,7 +252,7 @@ void Character::Render() {
 
 		//무기
 		glPushMatrix();
-		glTranslatef(35, -10, 25);
+		glTranslatef(35+Break_x, -10, 25+Break_z);
 		gluCylinder(Equipment[0], 6, 6, 10, 20, 8);
 		gluDisk(Equipment_other[0], 0, 6, 20, 3);
 		glPushMatrix();
@@ -272,7 +272,7 @@ void Character::Render() {
 		glPopMatrix();
 
 		glPushMatrix();
-		glTranslatef(-35, -10, 25);
+		glTranslatef(-35-Break_x, -10, 25+Break_z);
 		gluCylinder(Equipment[1], 6, 6, 10, 20, 8);
 		gluDisk(Equipment_other[1], 0, 6, 20, 3);
 		glPushMatrix();
@@ -304,46 +304,25 @@ void Character::Render() {
 
 void Character::M_Ffalling() {
 	if (Start_Z > START_DAY) {
-		yPos -= speed;
-		glPushMatrix();
-		glLoadIdentity();
-		glTranslatef(0, -10, 0);
-		glMultMatrixf(m_mtxlocalt);
-		glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocalt);
-		glPopMatrix();
+		yPos -= SPEED-5;
+	
 	}
 }
 
 
 void Character::  Move() {
-	Start_Z += SPEED;
+	Death();
+	Update();
+	Fast_Z += (SPEED+2);
+	Start_Z += SPEED+speed;
 	if (Start_Z > START_DAY) {
 		m_bMove = true;
 	}
-	glPushMatrix(); {
-		glLoadIdentity();
-		glTranslatef(0.0, 0.0, SPEED);
-		glMultMatrixf(m_mtxlocalt);
-		glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocalt);
-	}glPopMatrix();
 	if (Start_Z >= START_DAY-300 && Start_Z <= START_DAY) {
-		glPushMatrix(); {
-
-			yPos += 10;
-			glLoadIdentity();
-			glTranslatef(0.0, speed , 0.0);
-			glMultMatrixf(m_mtxlocalt);
-			glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocalt);
-		}glPopMatrix();
+		yPos += 10;
+		
 		if (x_angle > -35) {
-			glPushMatrix(); {
-				x_angle -= 5.0f;
-				glLoadIdentity();
-				glRotatef(-ANGLE, 1, 0, 0);
-				glMultMatrixf(m_mtxlocal);
-				glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocal);
-			}
-			glPopMatrix();
+			x_angle -= 5.0f;
 		}
 	}
 	for (int i = 0; i < 40; i++)spee[i]->Particle();
@@ -352,40 +331,15 @@ void Character::  Move() {
 	case true:
 		if (x_angle < 0) {
 			x_angle += 2.5f;
-			glPushMatrix(); {
-				glLoadIdentity();
-				glRotatef(ANGLE-2.5, 1.0, 0.0, 0.0);
-				glMultMatrixf(m_mtxlocal);
-				glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocal);
-			}glPopMatrix();
 		}
 		else if (x_angle > 0) {
 			x_angle -= 2.5f;
-			glPushMatrix(); {
-				glLoadIdentity();
-				glRotatef(-ANGLE+2.5, 1.0, 0.0, 0.0);
-				glMultMatrixf(m_mtxlocal);
-				glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocal);
-			}glPopMatrix();
 		}
 		if (z_angle < 0) {
 			z_angle += 2.5f;
-			glPushMatrix(); {
-				glLoadIdentity();
-				glRotatef(ANGLE-2.5, 0.0, 0.0, 1.0);
-				glMultMatrixf(m_mtxlocal);
-				glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocal);
-			}glPopMatrix();
 		}
 		else if (z_angle > 0) {
 			z_angle -= 2.5f;
-			glPushMatrix(); {
-				glLoadIdentity();
-				glRotatef(-ANGLE+2.5, 0.0, 0.0, 1.0);
-				glMultMatrixf(m_mtxlocal);
-				glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocal);
-			}glPopMatrix();
-
 		}
 		break;
 	default:
@@ -395,83 +349,48 @@ void Character::  Move() {
 	case true:
 		y_angle += 50.0f;
 		yPos -= 10;
-		if (Boom_Radius > 150) {
-			Boom_Radius = 150;
-		}
-		else
-		Boom_Radius += 10;
+		Break_x += 10;
+		Break_y += 7;
+		Break_z += 5;
+		if (yPos < 0)
+			drop = true;
 		break;
 	default:
 		break;
 	}
 	
-	
 }
 
-void Character::GetKey(const unsigned char key, const int x, const int y) {
+void Character::GetKey( unsigned char key,  int x, int y) {
 	if (m_bMove) {
 		switch (key) {
 		case 'W':
 		case 'w':
 			if (yPos < 400) {
-				yPos += speed*2;
-				glPushMatrix(); {
-					glLoadIdentity();
-					glTranslatef(0, speed+10, 0.0);
-					glMultMatrixf(m_mtxlocalt);
-					glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocalt);
-				}glPopMatrix();
+				yPos += SPEED*2;
+				
 			}
 			if (x_angle >-45) {
 				x_angle -= 5.0f;
-				glPushMatrix(); {
-					glLoadIdentity();
-					glRotatef(-ANGLE, 1.0, 0.0, 0.0);
-					glMultMatrixf(m_mtxlocal);
-					glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocal);
-				}glPopMatrix();
+			
 			}
 			break;
 		case 'd':
 		case 'D':
-			if (xPos > -200) {
-				xPos += -200;
-				glPushMatrix(); {
-					glLoadIdentity();
-					glTranslatef(-200, 0.0, 0.0);
-					glMultMatrixf(m_mtxlocalt);
-					glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocalt);
-				}glPopMatrix();
+			if (xPos > -100) {
+				xPos += -100;
 			}
 			if (z_angle< 20) {
 				z_angle += 40.0f;
-				glPushMatrix(); {
-					glLoadIdentity();
-					glRotatef(ANGLE, 0.0, 0.0, 1.0);
-					glMultMatrixf(m_mtxlocal);
-					glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocal);
-				}glPopMatrix();
 			}
 			break;
 		case 'a':
 		case 'A':
-			if (xPos < 200) {
-				xPos += 200;
-				glPushMatrix(); {
-					glLoadIdentity();
-					glTranslatef(200, 0.0, 0.0);
-					glMultMatrixf(m_mtxlocalt);
-					glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocalt);
-				}glPopMatrix();
+			if (xPos < 100) {
+				xPos += 100;
 			}
 			if (z_angle > -20) {
 				z_angle -= 40.0f;
-				glPushMatrix(); {
-					glLoadIdentity();
-					glRotatef(-ANGLE, 0.0, 0.0, 1.0);
-					glMultMatrixf(m_mtxlocal);
-					glGetFloatv(GL_MODELVIEW_MATRIX, m_mtxlocal);
-				}glPopMatrix();
 			}
 			break;
 		}
@@ -494,6 +413,13 @@ void Character::Death() {
 		}
 	}
 }
+bool Character::M_FDead() {
+	if (drop)return drop;
+	else
+		return drop;
+}
 void Character::Update() {
-	
+//	if (Fast_Z % 1000 == 0) {
+//		speed += 2;
+//	}
 }

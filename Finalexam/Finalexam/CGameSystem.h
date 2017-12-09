@@ -3,11 +3,12 @@
 #include"CIntro.h"
 #include"CSoundManager.h"
 #include"CIngame.h"
+#include"GameOver.h"
 class CGameSystem {
+	CIntro*m_pCIntro{ nullptr };
 	CIngame* m_pCIngame{ nullptr };
 	CSoundManager* m_pSoundManager{ nullptr };
-	bool m_bIntro;
-	bool m_bFixed;
+	CGameOver *m_pCGameOver{ nullptr };
 	bool m_bGameOver{ false };
 	GLubyte *Texbits;
 	BITMAPINFO *info;
@@ -18,11 +19,12 @@ class CGameSystem {
 public:
 	CGameSystem();
 	~CGameSystem();
-	void GetKey(const unsigned char, const int, const int);
-	void SpecialKey(const int, const int, const int);
-	void MouseButton(const int ,const int ,int, int);
+
+	void GetKey(unsigned char, int, int);
+	void SpecialKey(int,  int, int);
+	void MouseButton( int , int ,int, int);
 	void MouseMotion( int,  int);
-	void Update(int);
+	void Update();
 	void Render();
 	GLubyte* loadDIBitmap(const char*, BITMAPINFO**);
 	void ChangeSize(int w, int h);
