@@ -20,7 +20,7 @@ protected:
 
 	int Fast_Z;
 	float Boom_Radius;
-	int speed;
+	
 	float x_angle;
 	float z_angle;
 	float y_angle;
@@ -31,7 +31,7 @@ protected:
 	float gage;
 	int direction = 0;
 	bool m_bMove;
-
+	bool m_bsuccess;
 	bool drop;
 	int Start_Z;
 	bool Dead;
@@ -41,7 +41,9 @@ protected:
 	GLfloat m_mtxlocal[16];
 	GLfloat m_mtxlocalt[16];
 public:
+	int speed;
 	bool M_FDead();
+	bool M_FSuccess();
 	Character();
 	~Character();
 	void M_Ffalling();

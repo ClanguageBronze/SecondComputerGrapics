@@ -5,6 +5,9 @@ CGameSystem::CGameSystem() {
 	m_pCIntro = new CIntro;
 	m_pSoundManager = new CSoundManager();
 	m_pSoundManager->PlayBGM(INTRO); 
+	speed = 0;
+	Dead = false;
+	Finish = false;
 }
 CGameSystem::~CGameSystem() {
 	if (m_pCIngame)delete m_pCIngame;
@@ -54,16 +57,30 @@ void CGameSystem::GetKey(const unsigned char key, const int x, const int y) {
 		}
 	}
 	else {
-		if (key == 'e' || key == 'E') {
-			delete m_pCGameOver;
-			m_pCGameOver = nullptr;
-			m_pCIntro = new CIntro;
+		if (Dead) {
+			if (key == 'e' || key == 'E') {
+				delete m_pCGameOver;
+				m_pCGameOver = nullptr;
+				m_pCIntro = new CIntro;
+			}
+			if (key == 'a' || key == 'A') {
+				delete m_pCGameOver;
+				m_pCGameOver = nullptr;
+				m_pCIngame = new CIngame;
+				m_pCIngame->Init();
+			}
 		}
-		if (key == 'a' || key == 'A') {
-			delete m_pCGameOver;
-			m_pCGameOver = nullptr;
-			m_pCIngame = new CIngame;
-			m_pCIngame->Init();
+		else if (Finish) {
+			if (key == 'q' || key == 'Q') {
+				delete m_pCGameOver;
+				m_pCGameOver = nullptr;
+				exit(1);
+			}
+			if (key == 's' || key == 'S') {
+				delete m_pCGameOver;
+				m_pCGameOver = nullptr;
+				m_pCIntro = new CIntro;
+			}
 		}
 	}
 	
@@ -88,24 +105,9 @@ void CGameSystem::MouseButton(const int button, const int state, int x, int y) {
 			}
 		}
 	}
-	if (m_pCGameOver) {
-		if (button == GLUT_LEFT_BUTTON&&state == GLUT_UP) {
-			if (-125 <= mouse_x&&mouse_x <= -75 && -200 <= mouse_y&&mouse_y <= -150) {
-				delete m_pCGameOver;
-				m_pCGameOver = nullptr;
-				m_pCIntro = new CIntro;
-			}
-			if (-125 <= mouse_x&&mouse_x <= -75 && 80 <= mouse_y&&mouse_y <= 125) {
-				delete m_pCGameOver;
-				m_pCGameOver = nullptr;
-				m_pCIngame = new CIngame;
-				m_pCIngame->Init();
-			}
-		}
-
+	if (m_pCIngame) {
+		m_pCIngame->Mousebutton(button, state, x, y);
 	}
-
-	
 }
 void CGameSystem::MouseMotion( int x, int y) {
 	if (m_pCIngame)m_pCIngame->MouseMotion(x,y);
@@ -113,12 +115,14 @@ void CGameSystem::MouseMotion( int x, int y) {
 void CGameSystem::Update() {
 	if (m_pCIngame) {
 		m_pCIngame->Update();
-		m_bGameOver = m_pCIngame->M_FDead();
+		Dead = m_pCIngame->M_FDead();
+		Finish = m_pCIngame->M_FFinish();
+		speed = m_pCIngame->speed;
 	}
-	if (m_bGameOver) {
+	if (Dead == true || Finish == true) {
 		delete m_pCIngame;
-		m_pCIngame= nullptr ;
-		m_pCGameOver = new CGameOver;
+		m_pCIngame = nullptr;
+		m_pCGameOver = new CGameOver(Dead, Finish);
 	}
 }
 void CGameSystem::ChangeSize(int w, int h) {

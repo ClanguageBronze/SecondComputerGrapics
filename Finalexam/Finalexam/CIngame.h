@@ -4,9 +4,11 @@
 #include"CSoundManager.h"
 #include"CObstacle.h"
 #include"map.h"
+#include"Opengl.h"
 #include"LIGHT.h"
 class CIngame {
 	Character* Main{ nullptr };
+	COpengl *Monster{ nullptr };
 	CSoundManager* SoundManager{ nullptr };
 	CMap * map{ nullptr };
 	LIGHT* light{ nullptr };
@@ -19,10 +21,15 @@ class CIngame {
 	float Upx;
 	float Upy;
 	float Upz;
-	int speed;
+	int mouse_x;
+	int mouse_y;
 	int line;
 	int Fast_z;
+	float xRotation;
+	float yRotation;
+	float zRotation;
 public:
+	int speed;
 	CIngame();
 	~CIngame();
 	void Init();
@@ -33,4 +40,5 @@ public:
 	void Update();
 	void Filming();
 	bool M_FDead();
+	bool M_FFinish();
 };

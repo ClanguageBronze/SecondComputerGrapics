@@ -81,6 +81,7 @@ Character::~Character() {
 	for (int i = 0; i < 40; i++)delete spee[i];
 }
 void Character::Init() {
+	m_bsuccess = false;
 	Fast_Z = 0;
 	drop = false;
 	Break_x = 0;
@@ -313,8 +314,8 @@ void Character::M_Ffalling() {
 void Character::  Move() {
 	Death();
 	Update();
-	Fast_Z += (SPEED+2);
-	Start_Z += SPEED+speed;
+	Fast_Z += SPEED;
+	Start_Z += SPEED;
 	if (Start_Z > START_DAY) {
 		m_bMove = true;
 	}
@@ -418,8 +419,17 @@ bool Character::M_FDead() {
 	else
 		return drop;
 }
+bool Character::M_FSuccess() {
+	return m_bsuccess;
+}
 void Character::Update() {
-//	if (Fast_Z % 1000 == 0) {
-//		speed += 2;
-//	}
+	if (Fast_Z % 1000 == 0&&Fast_Z!=0) {
+		speed += 2;
+		if (speed > 50) {
+			speed = 50;
+		}
+	}
+	if (Start_Z >= 49950) {
+		m_bsuccess= true;
+	}
 }

@@ -3,7 +3,7 @@
 class CGameOver {
 	GLubyte *texbits;
 	BITMAPINFO *info;
-	GLuint texture[1];
+	GLuint texture[2];
 	float Eyex;
 	float Eyey;
 	float Eyez;
@@ -13,8 +13,9 @@ class CGameOver {
 	float Upx;
 	float Upy;
 	float Upz;
+	int Select;
 public:
-	CGameOver();
+	CGameOver(bool,bool);
 	~CGameOver();
 	void Render();
 	GLubyte* loadDIBitmap(const char*, BITMAPINFO**);

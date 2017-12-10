@@ -16,7 +16,10 @@ class CGameSystem {
 	int mouse_x;
 	int mouse_y;
 	bool left_button;
+	bool Dead;
+	bool Finish;
 public:
+	int speed;
 	CGameSystem();
 	~CGameSystem();
 

@@ -1,6 +1,9 @@
 #include"GameOver.h"
 
-CGameOver::CGameOver() {
+CGameOver::CGameOver(bool Dead,bool Finish) {
+	if(Dead==true)
+	Select = 1;
+	else if (Finish==true)Select = 2;
 	Eyex = 0.0;
 	Eyey = 0.0;
 	Eyez = -10.0;
@@ -10,9 +13,17 @@ CGameOver::CGameOver() {
 	Upx = 0.0;
 	Upy = 1.0;
 	Upz = 0.0;
-	glGenTextures(1, texture);
+	glGenTextures(2, texture);
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
 	texbits = loadDIBitmap("GameOver.bmp", &info);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, texbits);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, GL_MODULATE);
+	glBindTexture(GL_TEXTURE_2D, texture[1]);
+	texbits = loadDIBitmap("Finish.bmp", &info);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, texbits);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -28,17 +39,32 @@ void CGameOver:: Render() {
 	gluLookAt(Eyex, Eyey, Eyez, Centerx, Centery, Centerz, Upx, Upy, Upz);
 	glTranslatef(0.0, -50.0, 0.0);
 	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, texture[0]);
-	glBegin(GL_QUADS); {
-		glTexCoord2f(0, 0);
-		glVertex3f(175, -90, 0.0);
-		glTexCoord2f(0, 1);
-		glVertex3f(175, 180, 0.0);
-		glTexCoord2f(1, 1);
-		glVertex3f(-175, 180, 0.0);
-		glTexCoord2f(1, 0);
-		glVertex3f(-175, -90, 0.0);
-	}; glEnd();
+	if (Select == 1) {
+		glBindTexture(GL_TEXTURE_2D, texture[0]);
+		glBegin(GL_QUADS); {
+			glTexCoord2f(0, 0);
+			glVertex3f(175, -90, 0.0);
+			glTexCoord2f(0, 1);
+			glVertex3f(175, 180, 0.0);
+			glTexCoord2f(1, 1);
+			glVertex3f(-175, 180, 0.0);
+			glTexCoord2f(1, 0);
+			glVertex3f(-175, -90, 0.0);
+		}; glEnd();
+	}
+	else {
+		glBindTexture(GL_TEXTURE_2D, texture[1]);
+		glBegin(GL_QUADS); {
+			glTexCoord2f(0, 0);
+			glVertex3f(175, -90, 0.0);
+			glTexCoord2f(0, 1);
+			glVertex3f(175, 180, 0.0);
+			glTexCoord2f(1, 1);
+			glVertex3f(-175, 180, 0.0);
+			glTexCoord2f(1, 0);
+			glVertex3f(-175, -90, 0.0);
+		}; glEnd();
+	}
 }
 
 GLubyte* CGameOver::loadDIBitmap(const char*filename, BITMAPINFO **info) {

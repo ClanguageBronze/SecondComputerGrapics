@@ -43,6 +43,9 @@
     <Filter Include="소스 파일\Scene\GameOver">
       <UniqueIdentifier>{72095897-879a-4b62-afa7-be5fac5819de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Object\Monster">
+      <UniqueIdentifier>{62f21ca6-0899-4cd1-9d86-5b7d45388043}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CGameSystem.h">
@@ -78,6 +81,9 @@
     <ClInclude Include="GameOver.h">
       <Filter>소스 파일\Scene\GameOver</Filter>
     </ClInclude>
+    <ClInclude Include="Opengl.h">
+      <Filter>소스 파일\Object\Monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CGameSystem.cpp">
@@ -109,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="GameOver.cpp">
       <Filter>소스 파일\Scene\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="Opengl.cpp">
+      <Filter>소스 파일\Object\Monster</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

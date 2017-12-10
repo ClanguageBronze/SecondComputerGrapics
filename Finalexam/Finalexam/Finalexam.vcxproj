@@ -153,6 +153,7 @@
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="LIGHT.h" />
     <ClInclude Include="map.h" />
+    <ClInclude Include="Opengl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CGameSystem.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="LIGHT.cpp" />
     <ClCompile Include="map.cpp" />
+    <ClCompile Include="Opengl.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -6,7 +6,7 @@
 #define PIE 3.141592
 GLUquadricObj *qobj;
 CGameSystem* gamesys{ nullptr };
-
+int Timer_speed=0;
 void Quit();//Á¾·á
 void TimerFunction(int value);
 void Mouse(int button, int state, int x, int y);
@@ -51,7 +51,7 @@ void Mouse(int button, int state, int x, int y) {
 void TimerFunction(int value) {
 		gamesys->Update();
 		glutPostRedisplay();
-		glutTimerFunc(UPDATE_FPS, TimerFunction, 1);
+		glutTimerFunc(UPDATE_FPS-gamesys->speed, TimerFunction, 1);
 }
 
 void Keyboard(unsigned char key, int x, int y) {

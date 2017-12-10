@@ -27,7 +27,7 @@ CMap::CMap() {
 	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, GL_MODULATE);
 
 	glBindTexture(GL_TEXTURE_2D, texture[3]);
-	TexBits = LoadDIBitmap("시작점.bmp", &info);
+	TexBits = LoadDIBitmap("배경.bmp", &info);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, TexBits);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -38,8 +38,6 @@ CMap::CMap() {
 CMap::~CMap(){}
 
 void CMap::Init() {
-	Start_point = 0.0;
-	End_point = RESULT;
 
 }
 
