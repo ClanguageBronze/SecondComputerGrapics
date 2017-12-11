@@ -37,9 +37,6 @@ CMap::CMap() {
 }
 CMap::~CMap(){}
 
-void CMap::Init() {
-
-}
 
 void CMap::Render() {
 	Start_Render();

@@ -6,11 +6,13 @@
 #include"map.h"
 #include"Opengl.h"
 #include"LIGHT.h"
+#include"map2.h"
 class CIngame {
 	Character* Main{ nullptr };
 	COpengl *Monster{ nullptr };
 	CSoundManager* SoundManager{ nullptr };
 	CMap * map{ nullptr };
+	CMap2 *map2{ nullptr };
 	LIGHT* light{ nullptr };
 	float Eyex ;
 	float Eyey ;

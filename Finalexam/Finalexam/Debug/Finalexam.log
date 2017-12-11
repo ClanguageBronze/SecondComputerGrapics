@@ -1,13 +1,23 @@
-﻿  Opengl.cpp
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\opengl.cpp(52): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\opengl.cpp(58): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\opengl.cpp(64): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\opengl.cpp(70): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\opengl.cpp(76): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\opengl.cpp(82): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\opengl.cpp(88): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\opengl.cpp(94): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\opengl.cpp(102): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\opengl.cpp(435): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 'fopen' 선언을 참조하십시오.
-  Finalexam.vcxproj -> C:\Users\lee\Documents\GitHub\cg\SecondComputerGrapics\Finalexam\Debug\Finalexam.exe
+﻿  map2.cpp
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(47): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(49): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(51): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(53): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(61): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(63): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(65): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(67): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(74): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(76): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(78): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(80): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(103): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(105): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(107): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(109): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\lenovo\documents\github\secondcomputergrapics\finalexam\finalexam\map2.cpp(120): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  CIngame.cpp
+  Generating Code...
+  Finalexam.vcxproj -> C:\Users\Lenovo\Documents\GitHub\SecondComputerGrapics\Finalexam\Debug\Finalexam.exe
+  Finalexam.vcxproj -> C:\Users\Lenovo\Documents\GitHub\SecondComputerGrapics\Finalexam\Debug\Finalexam.pdb (Full PDB)

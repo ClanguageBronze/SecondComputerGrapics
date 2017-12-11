@@ -9,7 +9,6 @@ class CMap {
 public:
 	CMap();
 	~CMap();
-	void Init();
 	void Render();
 	void Start_Render();
 	GLubyte * LoadDIBitmap(const char *, BITMAPINFO **);

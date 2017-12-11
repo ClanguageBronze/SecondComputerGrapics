@@ -4,6 +4,7 @@ CIngame::CIngame() {
 	Main = new Character;
 	light = new LIGHT(0, 420, 0, 1);
 	map = new CMap;
+	map2 = new CMap2;
 	SoundManager = new CSoundManager;
 	Monster = new COpengl(0, 55, -300);
 	Eyex = 0.0;
@@ -15,6 +16,9 @@ CIngame::CIngame() {
 	Upx = 0.0;
 	Upy = 1.0;
 	Upz = 0.0;
+	xRotation = 0.0;
+	yRotation = 0.0;
+	zRotation = 0.0;
 }
 CIngame::~CIngame(){
 	delete Main;
@@ -22,30 +26,24 @@ CIngame::~CIngame(){
 	delete light;
 	delete SoundManager;
 	delete Monster;
+	delete map2;
 }
 void CIngame::Init() {
 	line = 0;
 	speed = 0;
 	Main->Init();
 	light->Init();
-	map->Init();
+
 }
 
 void CIngame::Mousebutton( int button,  int state, int x, int y) {
-	if (button == GLUT_LEFT_BUTTON&&state == GLUT_DOWN) {
-		mouse_x = x;
-		mouse_y = y;
-	}
+
 }
 void CIngame::Getkey(unsigned char key,int x,int y) {
 	Main->GetKey(key, x, y);
 }
 void CIngame::MouseMotion(int x,int y){
-	xRotation -= (y - mouse_y) / 3.6;
-	yRotation += (x - mouse_x) / 3.6;
-	glutPostRedisplay();
-	mouse_x = x;
-	mouse_y = y;
+	
 }
 
 void CIngame::Render() {
@@ -59,8 +57,8 @@ void CIngame::Render() {
 
 	glTranslatef(0.0, -50.0, 0.0);
 
-
 	map->Render();
+	map2->Render();
 	Monster->Render();
 	Main->Render();
 	

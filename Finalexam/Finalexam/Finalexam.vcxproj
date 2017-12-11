@@ -153,6 +153,7 @@
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="LIGHT.h" />
     <ClInclude Include="map.h" />
+    <ClInclude Include="map2.h" />
     <ClInclude Include="Opengl.h" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +166,7 @@
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="LIGHT.cpp" />
     <ClCompile Include="map.cpp" />
+    <ClCompile Include="map2.cpp" />
     <ClCompile Include="Opengl.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
