@@ -87,9 +87,9 @@ void CMap2::Render() {
 		glTexCoord2f(0, 0);
 		glVertex3f(200, 460, 100000);
 		glTexCoord2f(0, 1);
-		glVertex3f(200, 215, 100000);
+		glVertex3f(200, 0, 100000);
 		glTexCoord2f(1, 1);
-		glVertex3f(-200, 215, 100000);
+		glVertex3f(-200, 0, 100000);
 	}glEnd();
 	glDisable(GL_TEXTURE_2D);
 }

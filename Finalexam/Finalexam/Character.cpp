@@ -429,7 +429,7 @@ void Character::Update() {
 			speed = 50;
 		}
 	}
-	if (Start_Z >= 49950) {
+	if (Start_Z >= 99950) {
 		m_bsuccess= true;
 	}
 }
