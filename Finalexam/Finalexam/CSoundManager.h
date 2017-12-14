@@ -2,7 +2,7 @@
 #pragma once
 #pragma comment(lib,"winmm.lib")
 
-#define INTRO_BGM "resource.wav"
+#define INTRO_BGM "Sound/Kirby_bgm.wav"
 #define INGAME_BGM "resource.wav"
 #define EFFECT_CLICK "resource.wav" 
 #define OBJ_MOVE "resource.wav"
