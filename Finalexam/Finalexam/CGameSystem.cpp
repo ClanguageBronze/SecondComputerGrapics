@@ -3,8 +3,6 @@ CGameSystem::CGameSystem() {
 //	m_pCIngame = new CIngame;
 //	m_pCIngame->Init();
 	m_pCIntro = new CIntro;
-	m_pSoundManager = new CSoundManager();
-	m_pSoundManager->PlayBGM(INTRO); 
 	speed = 0;
 	Dead = false;
 	Finish = false;
@@ -12,7 +10,7 @@ CGameSystem::CGameSystem() {
 CGameSystem::~CGameSystem() {
 	if (m_pCIngame)delete m_pCIngame;
 	if (m_pCIntro)delete m_pCIntro;
-	if (m_pSoundManager)delete m_pSoundManager;
+
 	if (m_pCGameOver)delete m_pCGameOver;
 }
 
@@ -103,11 +101,13 @@ void CGameSystem::MouseButton(const int button, const int state, int x, int y) {
 					m_pCIngame->Init();
 				}
 			}
+
 		}
 	}
 	if (m_pCIngame) {
 		m_pCIngame->Mousebutton(button, state, x, y);
 	}
+
 }
 void CGameSystem::MouseMotion( int x, int y) {
 	if (m_pCIngame)m_pCIngame->MouseMotion(x,y);

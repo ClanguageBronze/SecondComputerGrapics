@@ -7,7 +7,6 @@
 class CGameSystem {
 	CIntro*m_pCIntro{ nullptr };
 	CIngame* m_pCIngame{ nullptr };
-	CSoundManager* m_pSoundManager{ nullptr };
 	CGameOver *m_pCGameOver{ nullptr };
 	bool m_bGameOver{ false };
 	GLubyte *Texbits;

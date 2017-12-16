@@ -10,7 +10,7 @@
 class CIngame {
 	Character* Main{ nullptr };
 	COpengl *Monster{ nullptr };
-	CSoundManager* SoundManager{ nullptr };
+
 	CMap * map{ nullptr };
 	CMap2 *map2{ nullptr };
 	LIGHT* light{ nullptr };
@@ -21,6 +21,7 @@ class CIngame {
 	float Centery;
 	float Centerz;
 	float Upx;
+	bool Sea ;
 	float Upy;
 	float Upz;
 	int mouse_x;

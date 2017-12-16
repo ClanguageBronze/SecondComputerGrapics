@@ -5,7 +5,7 @@ CIngame::CIngame() {
 	light = new LIGHT(0, 420, 0, 1);
 	map = new CMap;
 	map2 = new CMap2;
-	SoundManager = new CSoundManager;
+
 	Monster = new COpengl(0, 55, -300);
 	Eyex = 0.0;
 	Eyey = 0.0;
@@ -24,7 +24,7 @@ CIngame::~CIngame(){
 	delete Main;
 	delete map;
 	delete light;
-	delete SoundManager;
+
 	delete Monster;
 	delete map2;
 }
@@ -33,7 +33,7 @@ void CIngame::Init() {
 	speed = 0;
 	Main->Init();
 	light->Init();
-
+	Sea = false;
 }
 
 void CIngame::Mousebutton( int button,  int state, int x, int y) {
@@ -47,6 +47,7 @@ void CIngame::MouseMotion(int x,int y){
 }
 
 void CIngame::Render() {
+	glClearColor(1, 1, 1, 1);
 	glEnable(GL_DEPTH_TEST);
 	glLoadIdentity();
 	glTranslatef(0.0, 0.0, -300.0);
@@ -58,10 +59,10 @@ void CIngame::Render() {
 	glTranslatef(0.0, -50.0, 0.0);
 
 	map->Render();
-	map2->Render();
-	Monster->Render();
 	Main->Render();
+	Monster->Render();
 	
+	map2->Render();
 	light->M_FLIGHTING();
 
 }
@@ -81,6 +82,8 @@ void CIngame::Filming() {
 		Eyey += SPEED;
 		Centery += SPEED;
 	}
+	if (Eyez > 20000)
+		Sea = true;
 	speed = Main->speed;
 //	if (line % 1000 == 0) {
 //		speed += 2;

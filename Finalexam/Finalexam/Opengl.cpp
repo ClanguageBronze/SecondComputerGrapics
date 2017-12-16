@@ -6,6 +6,7 @@ COpengl::COpengl(float x,float y,float z) {
 		gluQuadricNormals(Cube[i], GLU_SMOOTH);
 	}
 	xPos = x;
+	shape = 1;
 	yPos = y;
 	i = 0;
 	zPos = z;
@@ -42,68 +43,99 @@ void COpengl::Render() {
 	
 	glTranslated(0, 160, -30);
 	//glRotatef(90, 1, 0, 0);
-	glPushMatrix();
-	glTranslatef(0, 50, 0);
-	glutSolidSphere(5, 20, 8);
-	glPopMatrix();
-	glRotatef(90, 1, 0, 0);
-	glColor3f(color[0], color[1], color[2]);
-	glPushMatrix();
-	glRotatef(45 + i, 0, 0, 1);
-	glTranslated(0, 20, -50);
-	glScaled(0.03, 1, 0.03);
-	glutSolidCube(100);
-	glPopMatrix();
-	glPushMatrix();
-	glRotatef(90 + i, 0, 0, 1);
-	glTranslated(0, 20, -50);
-	glScaled(0.03, 1, 0.03);
-	glutSolidCube(100);
-	glPopMatrix();
-	glPushMatrix();
-	glRotatef(135 + i, 0, 0, 1);
-	glTranslated(0, 20, -50);
-	glScaled(0.03, 1, 0.03);
-	glutSolidCube(100);
-	glPopMatrix();
-	glPushMatrix();
-	glRotatef(180 + i, 0, 0, 1);
-	glTranslated(0, 20, -50);
-	glScaled(0.03, 1, 0.03);
-	glutSolidCube(100);
-	glPopMatrix();
-	glPushMatrix();
-	glRotatef(225 + i, 0, 0, 1);
-	glTranslated(0, 20, -50);
-	glScaled(0.03, 1, 0.03);
-	glutSolidCube(100);
-	glPopMatrix();
-	glPushMatrix();
-	glRotatef(270 + i, 0, 0, 1);
-	glTranslated(0, 20, -50);
-	glScaled(0.03, 1, 0.03);
-	glutSolidCube(100);
-	glPopMatrix();
-	glPushMatrix();
-	glRotatef(315 + i, 0, 0, 1);
-	glTranslated(0, 20, -50);
-	glScaled(0.03, 1, 0.03);
-	glutSolidCube(100);
-	glPopMatrix();
-	glPushMatrix();
-	glRotatef(360 + i, 0, 0, 1);
-	glTranslated(0, 20, -50);
-	glScaled(0.03, 1, 0.03);
-	glutSolidCube(100);
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(0, 20, -47.5);
-	//	glRotatef(90, 1, 0, 0);
-	glScalef(0.1, 1, 0.1);
-	glutSolidCube(80);
-	glPopMatrix();
+	if (shape == 1) {
+		glPushMatrix();
+		glTranslatef(0, 50, 0);
+		glutSolidSphere(5, 20, 8);
+		glPopMatrix();
+		glRotatef(90, 1, 0, 0);
+		glColor3f(color[0], color[1], color[2]);
 
 
+		glPushMatrix();
+		glRotatef(45 + i, 0, 0, 1);
+		glTranslated(0, 20, -50);
+		glScaled(0.03, 1, 0.03);
+		glutSolidCube(100);
+		glPopMatrix();
+		glPushMatrix();
+		glRotatef(90 + i, 0, 0, 1);
+		glTranslated(0, 20, -50);
+		glScaled(0.03, 1, 0.03);
+		glutSolidCube(100);
+		glPopMatrix();
+		glPushMatrix();
+		glRotatef(135 + i, 0, 0, 1);
+		glTranslated(0, 20, -50);
+		glScaled(0.03, 1, 0.03);
+		glutSolidCube(100);
+		glPopMatrix();
+		glPushMatrix();
+		glRotatef(180 + i, 0, 0, 1);
+		glTranslated(0, 20, -50);
+		glScaled(0.03, 1, 0.03);
+		glutSolidCube(100);
+		glPopMatrix();
+		glPushMatrix();
+		glRotatef(225 + i, 0, 0, 1);
+		glTranslated(0, 20, -50);
+		glScaled(0.03, 1, 0.03);
+		glutSolidCube(100);
+		glPopMatrix();
+		glPushMatrix();
+		glRotatef(270 + i, 0, 0, 1);
+		glTranslated(0, 20, -50);
+		glScaled(0.03, 1, 0.03);
+		glutSolidCube(100);
+		glPopMatrix();
+		glPushMatrix();
+		glRotatef(315 + i, 0, 0, 1);
+		glTranslated(0, 20, -50);
+		glScaled(0.03, 1, 0.03);
+		glutSolidCube(100);
+		glPopMatrix();
+		glPushMatrix();
+		glRotatef(360 + i, 0, 0, 1);
+		glTranslated(0, 20, -50);
+		glScaled(0.03, 1, 0.03);
+		glutSolidCube(100);
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(0, 20, -47.5);
+		//	glRotatef(90, 1, 0, 0);
+		glScalef(0.1, 1, 0.1);
+		glutSolidCube(80);
+		glPopMatrix();
+	}
+	else {
+		glPushMatrix();
+		glTranslatef(0, 220, 80);
+		glScalef(0.2, 1, 0.2);
+		glutSolidCube(100);
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(0, 240, 40);
+		glScalef(0.1, 0.1, 1);
+		glutSolidCube(100);
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(0, 240, 0);
+		glScalef(0.2, 0.2, 0.2);
+		glutSolidCube(50);
+		glPopMatrix();
+		glPushMatrix();
+		glColor3f(1, 0, 0);
+		glTranslatef(20, 220, 0);
+		glScalef(0.1, 1, 0.1);
+		glutSolidCube(100);
+		glPopMatrix();
+		glPushMatrix();
+		glColor3f(0, 0, 1);
+		glTranslatef(-20, 220, 0);
+		glScalef(0.1, 1, 0.1);
+		glutSolidCube(100);
+		glPopMatrix();
+	}
 	glPopMatrix();
 	glColor3f(1, 1, 0);
 	glBegin(GL_QUADS); {
@@ -484,6 +516,7 @@ void COpengl::Render() {
 	glPopMatrix();
 }
 void COpengl::Rotation(){
+	
 	i += 60;
 	if (zPos > -10) {
 		zPos += SPEED;
@@ -491,6 +524,8 @@ void COpengl::Rotation(){
 	else {
 		zPos += (SPEED+5);
 	}
+	if (zPos >= 20000)
+		shape = 2;
 }
 
 GLubyte* COpengl:: loadDIBitmap(const char*filename, BITMAPINFO **info) {

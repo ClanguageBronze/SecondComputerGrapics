@@ -1,5 +1,6 @@
 #pragma once
 #include"define.h"
+#include"CSoundManager.h"
 class CGameOver {
 	GLubyte *texbits;
 	BITMAPINFO *info;
@@ -14,6 +15,7 @@ class CGameOver {
 	float Upy;
 	float Upz;
 	int Select;
+	
 public:
 	CGameOver(bool,bool);
 	~CGameOver();

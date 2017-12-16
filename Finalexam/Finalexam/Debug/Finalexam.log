@@ -1,21 +1,24 @@
-﻿  CGameSystem.cpp
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cgamesystem.cpp(166): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  GameOver.cpp
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\gameover.cpp(81): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 'fopen' 선언을 참조하십시오.
+  CIngame.cpp
   코드를 생성하고 있습니다...
   컴파일하고 있습니다...
   Source.cpp
   CSoundManager.cpp
   CIntro.cpp
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(68): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(70): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(72): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(74): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(79): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(81): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(83): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(85): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(96): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(71): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(73): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(75): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(77): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(82): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(84): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(86): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(88): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cintro.cpp(99): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 'fopen' 선언을 참조하십시오.
-  CIngame.cpp
+  CGameSystem.cpp
+c:\users\lee\documents\github\cg\secondcomputergrapics\finalexam\finalexam\cgamesystem.cpp(168): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 'fopen' 선언을 참조하십시오.
   코드를 생성하고 있습니다...
   Finalexam.vcxproj -> C:\Users\lee\Documents\GitHub\cg\SecondComputerGrapics\Finalexam\Debug\Finalexam.exe

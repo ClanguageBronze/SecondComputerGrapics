@@ -40,7 +40,7 @@ CMap::~CMap(){}
 
 void CMap::Render() {
 	Start_Render();
-
+	
 	glBindTexture(GL_TEXTURE_2D, texture[1]);
 	glBegin(GL_QUADS); {
 		glTexCoord2f(1, 0);
@@ -52,7 +52,7 @@ void CMap::Render() {
 		glTexCoord2f(1, 1);
 		glVertex3f(-150, 460, 1000);
 	}glEnd();
-	for (int i = 1; i < 50; i++) {
+	for (int i = 1; i < 20; i++) {
 		glBindTexture(GL_TEXTURE_2D, texture[1]);
 		glBegin(GL_QUADS); {
 			glTexCoord2f(1, 0);
@@ -87,7 +87,7 @@ void CMap::Render() {
 		glTexCoord2f(1, 1);
 		glVertex3f(-150, 460, 1000);
 	}glEnd();
-	for (int i = 1; i < 50; i++) {
+	for (int i = 1; i < 20; i++) {
 		glBindTexture(GL_TEXTURE_2D, texture[3]);
 		glBegin(GL_QUADS); {
 			glTexCoord2f(0, 1);
@@ -100,7 +100,7 @@ void CMap::Render() {
 			glVertex3f(-150, 460, 1000 * (i + 1));
 		}glEnd();
 	}
-	for (int i = 1; i < 50; i++) {
+	for (int i = 1; i < 20; i++) {
 		glBindTexture(GL_TEXTURE_2D, texture[3]);
 		glBegin(GL_QUADS); {
 			glTexCoord2f(0, 1);
@@ -113,17 +113,7 @@ void CMap::Render() {
 			glVertex3f(150, 460, 1000 * (i + 1));
 		}glEnd();
 	}
-	glBindTexture(GL_TEXTURE_2D, texture[2]);
-	glBegin(GL_QUADS); {
-		glTexCoord2f(1, 0);
-		glVertex3f(-200, 460, 50000);
-		glTexCoord2f(0, 0);
-		glVertex3f(200, 460, 50000);
-		glTexCoord2f(0, 1);
-		glVertex3f(200, 0, 50000);
-		glTexCoord2f(1, 1);
-		glVertex3f(-200, 0, 50000);
-	}glEnd();
+	
 	glDisable(GL_TEXTURE_2D);
 }
 void CMap::Start_Render() {
@@ -139,7 +129,7 @@ void CMap::Start_Render() {
 		glTexCoord2f(1,0);
 		glVertex3f(-150,0, 1000);
 	}glEnd();
-	for (int i = 1; i < 50; i++) {
+	for (int i = 1; i < 20; i++) {
 		glBindTexture(GL_TEXTURE_2D, texture[0]);
 		glBegin(GL_QUADS); {
 			glTexCoord2f(0, 1);

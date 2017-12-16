@@ -46,6 +46,9 @@
     <Filter Include="소스 파일\Object\Monster">
       <UniqueIdentifier>{62f21ca6-0899-4cd1-9d86-5b7d45388043}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Object\Cloud">
+      <UniqueIdentifier>{6cddd2db-b626-43e6-a5a1-70ae927e6188}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CGameSystem.h">
@@ -87,6 +90,9 @@
     <ClInclude Include="map2.h">
       <Filter>소스 파일\Object\Map</Filter>
     </ClInclude>
+    <ClInclude Include="Cloud.h">
+      <Filter>소스 파일\Object\Cloud</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CGameSystem.cpp">
@@ -124,6 +130,9 @@
     </ClCompile>
     <ClCompile Include="map2.cpp">
       <Filter>소스 파일\Object\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Cloud.cpp">
+      <Filter>소스 파일\Object\Cloud</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

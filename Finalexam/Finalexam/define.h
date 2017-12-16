@@ -9,6 +9,7 @@
 #include<mmsystem.h>
 #include<Windows.h>
 
+using namespace std;
 
 #define GAMESTART 0A01
 #define GAMEQUIT 0Z99

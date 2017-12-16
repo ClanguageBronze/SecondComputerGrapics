@@ -9,12 +9,13 @@ CIntro::CIntro() {
 	Centerz = 1.0;
 	Upx = 0.0;
 	Upy = 1.0;
+
 	Upz = 0.0;
 	light = new LIGHT(0, 0, -5,1.0);
 	light->Init();
 	glGenTextures(3, texture);
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
-	Texbits = loadDIBitmap("Title.bmp", &info);
+	Texbits = loadDIBitmap("TiTlel.bmp", &info);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, Texbits);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -44,6 +45,7 @@ CIntro::~CIntro() {
 }
 
 void CIntro::Render() {
+	glClearColor(1, 1, 1, 1);
 //	glEnable(GL_DEPTH_TEST);
 	light->M_FLIGHTING();
 	glLoadIdentity();
@@ -84,7 +86,7 @@ void CIntro::Render() {
 		glTexCoord2f(1, 1);
 		glVertex3f(-175, -35, -0.1);
 	}glEnd();
-
+	glDisable(GL_TEXTURE_2D);
 }
 
 

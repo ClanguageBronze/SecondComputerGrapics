@@ -4,6 +4,7 @@ CGameOver::CGameOver(bool Dead,bool Finish) {
 	if(Dead==true)
 	Select = 1;
 	else if (Finish==true)Select = 2;
+	
 	Eyex = 0.0;
 	Eyey = 0.0;
 	Eyez = -10.0;
@@ -15,7 +16,7 @@ CGameOver::CGameOver(bool Dead,bool Finish) {
 	Upz = 0.0;
 	glGenTextures(2, texture);
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
-	texbits = loadDIBitmap("GameOver.bmp", &info);
+	texbits = loadDIBitmap("과제.bmp", &info);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, texbits);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -23,7 +24,7 @@ CGameOver::CGameOver(bool Dead,bool Finish) {
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, GL_MODULATE);
 	glBindTexture(GL_TEXTURE_2D, texture[1]);
-	texbits = loadDIBitmap("Finish.bmp", &info);
+	texbits = loadDIBitmap("종강.bmp", &info);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, info->bmiHeader.biWidth, info->bmiHeader.biHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, texbits);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -31,7 +32,9 @@ CGameOver::CGameOver(bool Dead,bool Finish) {
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, GL_MODULATE);
 }
-CGameOver::~CGameOver(){}
+CGameOver::~CGameOver(){
+
+}
 
 void CGameOver:: Render() {
 	glLoadIdentity();
@@ -65,6 +68,7 @@ void CGameOver:: Render() {
 			glVertex3f(-175, -90, 0.0);
 		}; glEnd();
 	}
+	glDisable(GL_TEXTURE_2D);
 }
 
 GLubyte* CGameOver::loadDIBitmap(const char*filename, BITMAPINFO **info) {

@@ -17,7 +17,8 @@ protected:
 	GLUquadricObj *Equipment_other[2];
 	CSphere*spee[40]{ nullptr };
 	GLUquadricObj *Fire;
-
+	
+	int angle;
 	int Fast_Z;
 	float Boom_Radius;
 	
@@ -26,7 +27,7 @@ protected:
 	float y_angle;
 	float xPos;
 	float yPos;
-
+	int shape;
 	float hp;
 	float gage;
 	int direction = 0;

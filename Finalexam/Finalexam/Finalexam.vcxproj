@@ -37,6 +37,7 @@
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -50,6 +51,7 @@
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -146,6 +148,7 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="CIngame.h" />
     <ClInclude Include="CIntro.h" />
+    <ClInclude Include="Cloud.h" />
     <ClInclude Include="CObstacle.h" />
     <ClInclude Include="CSoundManager.h" />
     <ClInclude Include="CSphere.h" />
@@ -161,6 +164,7 @@
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="CIngame.cpp" />
     <ClCompile Include="CIntro.cpp" />
+    <ClCompile Include="Cloud.cpp" />
     <ClCompile Include="CSoundManager.cpp" />
     <ClCompile Include="CSphere.cpp" />
     <ClCompile Include="GameOver.cpp" />

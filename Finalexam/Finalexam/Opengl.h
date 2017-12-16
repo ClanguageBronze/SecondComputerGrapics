@@ -11,6 +11,7 @@ class COpengl {
 	float zPos;
 	int speed;
 	int i;
+	int shape;
 	float color[3];
 public:
 	COpengl(float,float,float);

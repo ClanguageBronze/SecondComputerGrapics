@@ -17,10 +17,11 @@ class CSphere {
 	float speed2;
 	GLUquadricObj *qobj;
 	bool m_bparticle;
+	int Effect;
 public:
 	CSphere();
 	~CSphere();
 	void Init();
 	void Render();
-	void Particle();
+	void Particle(int);
 };
