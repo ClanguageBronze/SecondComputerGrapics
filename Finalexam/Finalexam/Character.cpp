@@ -412,7 +412,7 @@ void Character::  Move() {
 	Update();
 	Fast_Z += SPEED;
 	Start_Z += SPEED;
-	if (Start_Z > START_DAY) {
+	if (Start_Z > START_DAY&&Dead == false) {
 		m_bMove = true;
 	}
 	if (Start_Z >= START_DAY-300 && Start_Z <= START_DAY) {
