@@ -1,5 +1,8 @@
 #include"Opengl.h"
 COpengl::COpengl(float x,float y,float z) {
+	m_pSoundManager = new CSoundManager;
+	m_pSoundManager->PlayEffect(EFFECT_OBJ_UPDATE_00);
+
 	for (int i = 0; i < 30; i++) {
 		Cube[i] = gluNewQuadric();
 		gluQuadricDrawStyle(Cube[i], GLU_FILL);
@@ -30,6 +33,8 @@ COpengl::~COpengl() {
 	for (int i = 0; i < 30; i++) {
 		gluDeleteQuadric(Cube[i]);
 	}
+	m_pSoundManager->Stop();
+	delete m_pSoundManager;
 }
 void COpengl::Init() {
 	
@@ -524,8 +529,10 @@ void COpengl::Rotation(){
 	else {
 		zPos += (SPEED+5);
 	}
-	if (zPos >= 20000)
+	if (zPos >= 20000) {
 		shape = 2;
+		
+	}
 }
 
 GLubyte* COpengl:: loadDIBitmap(const char*filename, BITMAPINFO **info) {

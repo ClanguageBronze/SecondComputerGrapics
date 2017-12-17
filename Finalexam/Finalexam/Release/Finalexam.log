@@ -1,48 +1,12 @@
-﻿  Character.cpp
-Character.cpp(102): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(113): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(113): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(135): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(141): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(152): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(157): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(163): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(171): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(173): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(180): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(188): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(190): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(196): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(203): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(205): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(211): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(216): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(218): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(224): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(229): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(231): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(237): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(242): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(244): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(251): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(259): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(266): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(272): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(279): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(286): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(292): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-Character.cpp(308): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(342): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(348): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(354): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(360): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(366): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(372): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(378): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Character.cpp(384): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  CGameSystem.cpp
+CGameSystem.cpp(71): warning C4305: '인수': 'int'에서 'bool'(으)로 잘립니다.
+CGameSystem.cpp(81): warning C4305: '인수': 'int'에서 'bool'(으)로 잘립니다.
+CGameSystem.cpp(96): warning C4305: '인수': 'int'에서 'bool'(으)로 잘립니다.
+CGameSystem.cpp(195): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: 'fopen' 선언을 참조하십시오.
   코드를 생성하고 있습니다.
-  1 of 89 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
+  2 of 98 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    7 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
   Finalexam.vcxproj -> C:\Users\lee\Documents\GitHub\cg\SecondComputerGrapics\Finalexam\Release\Finalexam.exe

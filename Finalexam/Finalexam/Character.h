@@ -1,5 +1,6 @@
 #pragma once
 #include"define.h"
+#include"CSoundManager.h"
 #include"CSphere.h"
 class Character {
 protected:
@@ -17,7 +18,7 @@ protected:
 	GLUquadricObj *Equipment_other[2];
 	CSphere*spee[40]{ nullptr };
 	GLUquadricObj *Fire;
-	
+	CSoundManager *m_pSoundManager{ nullptr };
 	int angle;
 	int Fast_Z;
 	float Boom_Radius;
@@ -28,7 +29,7 @@ protected:
 	float xPos;
 	float yPos;
 	int shape;
-	float hp;
+
 	float gage;
 	int direction = 0;
 	bool m_bMove;

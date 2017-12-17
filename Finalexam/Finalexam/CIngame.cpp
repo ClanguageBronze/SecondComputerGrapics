@@ -5,6 +5,7 @@ CIngame::CIngame() {
 	light = new LIGHT(0, 420, 0, 1);
 	map = new CMap;
 	map2 = new CMap2;
+	m_pSoundManager = new CSoundManager;
 
 	Monster = new COpengl(0, 55, -300);
 	Eyex = 0.0;
@@ -18,13 +19,15 @@ CIngame::CIngame() {
 	Upz = 0.0;
 	xRotation = 0.0;
 	yRotation = 0.0;
+	Sound = false;
 	zRotation = 0.0;
 }
 CIngame::~CIngame(){
 	delete Main;
 	delete map;
 	delete light;
-
+	m_pSoundManager->Stop();
+	delete m_pSoundManager;
 	delete Monster;
 	delete map2;
 }
@@ -89,6 +92,13 @@ void CIngame::Filming() {
 //		speed += 2;
 //	}
 //
+	if (Eyez >= 19990&&Eyez<=19998) {
+		Sound = true;
+	}
+	if (Sound) {
+		m_pSoundManager->PlayBGM(BGM_INGAME);
+		Sound = false;
+	}
 }
 bool CIngame::M_FDead() {
 	return Main->M_FDead();

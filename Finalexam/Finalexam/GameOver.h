@@ -15,7 +15,7 @@ class CGameOver {
 	float Upy;
 	float Upz;
 	int Select;
-	
+
 public:
 	CGameOver(bool,bool);
 	~CGameOver();

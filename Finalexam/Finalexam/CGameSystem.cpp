@@ -2,15 +2,19 @@
 CGameSystem::CGameSystem() {
 //	m_pCIngame = new CIngame;
 //	m_pCIngame->Init();
+	m_pSoundManager = new CSoundManager;
+	m_pSoundManager->SetSounds();
+	m_pSoundManager->PlayBGM(BGM_INTRO);
 	m_pCIntro = new CIntro;
 	speed = 0;
 	Dead = false;
+	Count = 0;
 	Finish = false;
 }
 CGameSystem::~CGameSystem() {
 	if (m_pCIngame)delete m_pCIngame;
 	if (m_pCIntro)delete m_pCIntro;
-
+	if (m_pSoundManager)delete m_pSoundManager;
 	if (m_pCGameOver)delete m_pCGameOver;
 }
 
@@ -20,6 +24,8 @@ void CGameSystem::SpecialKey(const int key , const int x, const int y ) {
 			delete m_pCIngame;
 			m_pCIngame = nullptr;
 			m_pCIntro = new CIntro;
+			Count = 0;
+			m_pSoundManager->PlayBGM(BGM_INTRO);
 		}
 	}
 	else {
@@ -51,7 +57,7 @@ void CGameSystem::GetKey(const unsigned char key, const int x, const int y) {
 				m_pCIntro = nullptr;
 				m_pCIngame = new CIngame;
 				m_pCIngame->Init();
-			
+				m_pSoundManager->Stop();
 		}
 	}
 	else {
@@ -59,13 +65,20 @@ void CGameSystem::GetKey(const unsigned char key, const int x, const int y) {
 			if (key == 'e' || key == 'E') {
 				delete m_pCGameOver;
 				m_pCGameOver = nullptr;
+				Dead = false;
 				m_pCIntro = new CIntro;
+				Count = 0;
+				m_pSoundManager->Stop(BGM_CLEAR1);
+				m_pSoundManager->PlayBGM(BGM_INTRO);
 			}
 			if (key == 'a' || key == 'A') {
 				delete m_pCGameOver;
+
 				m_pCGameOver = nullptr;
+				Count = 0;
 				m_pCIngame = new CIngame;
 				m_pCIngame->Init();
+				m_pSoundManager->Stop(BGM_CLEAR1);
 			}
 		}
 		else if (Finish) {
@@ -77,7 +90,11 @@ void CGameSystem::GetKey(const unsigned char key, const int x, const int y) {
 			if (key == 's' || key == 'S') {
 				delete m_pCGameOver;
 				m_pCGameOver = nullptr;
+				Finish = false;
 				m_pCIntro = new CIntro;
+				Count = 0;
+				m_pSoundManager->Stop(BGM_CLEAR2);
+				m_pSoundManager->PlayBGM(BGM_INTRO);
 			}
 		}
 	}
@@ -89,19 +106,21 @@ void CGameSystem::MouseButton(const int button, const int state, int x, int y) {
 	if (m_pCIntro) {
 		if (button == GLUT_LEFT_BUTTON&&state == GLUT_UP) {
 			if (-100 <= mouse_x&&mouse_x <= 100 && 200 <= mouse_y&&mouse_y <= 250) {
+				m_pSoundManager->Stop();
 				delete m_pCIntro;
 				m_pCIntro = nullptr;
 				exit(1);
 			}
 			if (-100 <= mouse_x&&mouse_x <= 100 && 100 <= mouse_y&&mouse_y <= 150) {
 				if (!m_pCIngame) {
+					m_pSoundManager->Stop(BGM_INTRO);
 					delete m_pCIntro;
 					m_pCIntro = nullptr;
 					m_pCIngame = new CIngame;
 					m_pCIngame->Init();
 				}
 			}
-
+			m_pSoundManager->PlayEffect(EFFECT_CLICK_BUTTON_00);
 		}
 	}
 	if (m_pCIngame) {
@@ -123,6 +142,16 @@ void CGameSystem::Update() {
 		delete m_pCIngame;
 		m_pCIngame = nullptr;
 		m_pCGameOver = new CGameOver(Dead, Finish);
+		if (Dead) {
+			Count++;
+			if (Count == 1)
+				m_pSoundManager->PlayBGM(BGM_CLEAR1);
+		}
+		if (Finish) {
+			Count++;
+			if (Count == 1)
+				m_pSoundManager->PlayBGM(BGM_CLEAR2);
+		}
 	}
 }
 void CGameSystem::ChangeSize(int w, int h) {

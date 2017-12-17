@@ -34,6 +34,7 @@ CGameOver::CGameOver(bool Dead,bool Finish) {
 }
 CGameOver::~CGameOver(){
 
+
 }
 
 void CGameOver:: Render() {

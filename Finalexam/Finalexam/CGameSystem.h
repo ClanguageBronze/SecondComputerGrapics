@@ -8,6 +8,7 @@ class CGameSystem {
 	CIntro*m_pCIntro{ nullptr };
 	CIngame* m_pCIngame{ nullptr };
 	CGameOver *m_pCGameOver{ nullptr };
+	CSoundManager *m_pSoundManager;
 	bool m_bGameOver{ false };
 	GLubyte *Texbits;
 	BITMAPINFO *info;
@@ -16,6 +17,7 @@ class CGameSystem {
 	int mouse_y;
 	bool left_button;
 	bool Dead;
+	int Count;
 	bool Finish;
 public:
 	int speed;

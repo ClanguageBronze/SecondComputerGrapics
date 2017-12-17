@@ -1,5 +1,8 @@
 #include"Character.h"
 Character::Character() {
+	m_pSoundManager = new CSoundManager();
+	m_pSoundManager->SetSounds();
+	m_pSoundManager->PlayEffect(EFFECT_OBJ_MOVE_00);
 	shape = 1;
 	angle = 0;
 	for (int i = 0; i < 40; i++) {
@@ -81,6 +84,8 @@ Character::~Character() {
 		gluDeleteQuadric(Equipment_other[i]);
 	}
 	for (int i = 0; i < 40; i++)delete spee[i];
+	m_pSoundManager->Stop();
+	delete m_pSoundManager;
 }
 void Character::Init() {
 	m_bsuccess = false;
@@ -97,7 +102,6 @@ void Character::Init() {
 	xPos = 0.0f;
 	yPos = 0.0f;
 	y_angle = 0.0f;
-	hp = 100.0;
 	gage = 0.0;
 	Start_Z = 0.0;
 	Dead = false;
@@ -523,19 +527,23 @@ void Character::GetKey( unsigned char key,  int x, int y) {
 
 
 void Character::Death() {
-	if (hp < 0.0) {
-		Dead = true;
-		m_bMove = false;
-	}
 	if (Start_Z > START_DAY) {
 		if (shape == 1) {
 			if (yPos < 215) {
+				if (Dead == false) {
+					m_pSoundManager->Stop(EFFECT_OBJ_MOVE_00);
+					m_pSoundManager->PlayEffect(EFFECT_OBJ_DEAD_00);
+				}
 				Dead = true;
 				m_bMove = false;
 			}
 		}
 		else {
 			if (yPos >400) {
+				if (Dead == false) {
+					m_pSoundManager->Stop(EFFECT_OBJ_MOVE_00);
+					m_pSoundManager->PlayEffect(EFFECT_OBJ_DEAD_00);
+				}
 				Dead = true;
 				m_bMove = false;
 			}
@@ -559,6 +567,7 @@ void Character::Update() {
 	}
 	if (Start_Z >= 20000) {
 		shape = 2;
+		m_pSoundManager->Stop(EFFECT_OBJ_MOVE_00);
 	}
 	if (Start_Z >= 40000) {
 		m_bsuccess= true;

@@ -1,11 +1,12 @@
 #pragma once
 #include"define.h"
-
+#include"CSoundManager.h"
 class COpengl {
 	GLUquadricObj* Cube[30];
 	GLubyte *Texbits;
 	BITMAPINFO *info;
 	GLuint texture[20];
+	CSoundManager *m_pSoundManager{ nullptr };
 	float  xPos;
 	float yPos;
 	float zPos;
